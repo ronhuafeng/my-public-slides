@@ -1,0 +1,175 @@
+<mxfile host="Electron" modified="2025-08-04T00:00:00.000Z" agent="5.0" etag="abc123" version="22.1.11" type="device">
+  <diagram name="PPAP Agent Debug Workflow" id="ppap-debug-workflow">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <mxCell id="2" value="开始调试" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="500" y="40" width="120" height="50" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="3" value="启动 PPAP 服务&lt;br&gt;start-ppap-services" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="470" y="130" width="180" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="4" value="监控服务状态&lt;br&gt;monitor-services" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="470" y="230" width="180" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="5" value="服务正常运行？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="480" y="330" width="160" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="6" value="检查日志" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="200" y="340" width="120" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="7" value="Web 服务日志&lt;br&gt;check-docker-logs-web" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="60" y="450" width="140" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="8" value="Worker 服务日志&lt;br&gt;check-docker-logs-worker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="220" y="450" width="140" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="9" value="启动日志&lt;br&gt;check-service-logs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="380" y="450" width="120" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="10" value="功能测试" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="750" y="340" width="120" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="11" value="简单功能测试&lt;br&gt;simple-ppap-test" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="670" y="450" width="130" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="12" value="基准测试" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="830" y="450" width="120" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="13" value="4规则测试&lt;br&gt;benchmark-test-4-rules" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="750" y="550" width="140" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="14" value="全规则测试&lt;br&gt;benchmark-test-all-rules" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="920" y="550" width="140" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="15" value="查看测试报告" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d0de;strokeColor=#996185;" parent="1" vertex="1">
+          <mxGeometry x="830" y="650" width="120" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="16" value="4规则报告&lt;br&gt;check-benchmark-report-4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d0de;strokeColor=#996185;" parent="1" vertex="1">
+          <mxGeometry x="720" y="750" width="150" height="50" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="17" value="完整报告&lt;br&gt;check-benchmark-report-full" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d0de;strokeColor=#996185;" parent="1" vertex="1">
+          <mxGeometry x="920" y="750" width="150" height="50" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="18" value="停止服务&lt;br&gt;stop-ppap-services" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="50" y="650" width="140" height="60" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="19" value="调试完成" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="500" y="850" width="120" height="50" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="20" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="21" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="22" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="23" value="否" edge="1" parent="1" source="5" target="6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="24" value="是" edge="1" parent="1" source="5" target="10">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="25" edge="1" parent="1" source="6" target="7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="26" edge="1" parent="1" source="6" target="8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="27" edge="1" parent="1" source="6" target="9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="28" edge="1" parent="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="29" edge="1" parent="1" source="10" target="12">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="30" edge="1" parent="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="31" edge="1" parent="1" source="12" target="14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="32" edge="1" parent="1" source="13" target="15">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="33" edge="1" parent="1" source="14" target="15">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="34" edge="1" parent="1" source="15" target="16">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="35" edge="1" parent="1" source="15" target="17">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="36" edge="1" parent="1" source="7" target="18">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="37" edge="1" parent="1" source="8" target="18">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="38" edge="1" parent="1" source="9" target="18">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="39" edge="1" parent="1" source="16" target="19">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="40" edge="1" parent="1" source="17" target="19">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="41" edge="1" parent="1" source="18" target="19">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="42" edge="1" parent="1" source="11" target="19">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

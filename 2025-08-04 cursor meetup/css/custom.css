@@ -1,0 +1,156 @@
+/* Custom styles for beautiful slides */
+
+/* Draw.io diagram container styling - Updated for generic implementation */
+[data-drawio-src] {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    /* max-width: 90vw; */
+    /* max-height: 80vh; */
+    margin: 20px auto;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Make draw.io diagrams work well with dark theme */
+.reveal [data-drawio-src] .geDiagramContainer {
+    background-color: #ffffff !important;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+}
+
+/* Ensure proper contrast for diagram elements */
+.reveal [data-drawio-src] .geGraph {
+    background-color: transparent;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.reveal {
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-transform: none;
+    text-shadow: none;
+    word-wrap: break-word;
+}
+
+/* Custom gradient backgrounds */
+.reveal .slides section[data-background-gradient] {
+    background-attachment: fixed;
+}
+
+/* Code blocks styling */
+.reveal pre {
+    display: block;
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+    text-align: left;
+    font-size: 0.55em;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    line-height: 1.2em;
+    word-wrap: break-word;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+.reveal code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    text-transform: none;
+}
+
+/* Navigation improvements */
+.reveal .controls {
+    color: #42affa;
+}
+
+.reveal .progress {
+    color: #42affa;
+}
+
+/* Slide number styling */
+.reveal .slide-number {
+    color: #42affa;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 5px;
+}
+
+/* Link styling */
+.reveal a {
+    color: #42affa;
+    text-decoration: none;
+    transition: color .15s ease;
+}
+
+.reveal a:hover {
+    color: #6ca0e8;
+    text-shadow: none;
+    border: none;
+}
+
+/* Lists styling */
+.reveal ul, .reveal ol {
+    display: inline-block;
+    text-align: left;
+    margin: 0 0 0 1em;
+}
+
+/* Fragment animations customization */
+.reveal .fragment.highlight-current-blue,
+.reveal .fragment.current-fragment.highlight-current-blue {
+    color: #42affa;
+}
+
+/* Custom slide transitions */
+.reveal .slides section.past {
+    opacity: 0;
+}
+
+.reveal .slides section.future {
+    opacity: 0;
+}
+
+.reveal .slides section.present {
+    opacity: 1;
+}
+
+/* Speaker notes (only visible in speaker view) */
+.speaker-notes {
+    display: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .reveal h1 {
+        font-size: 2.5em;
+    }
+    
+    .reveal h2 {
+        font-size: 1.8em;
+    }
+    
+    .reveal pre {
+        font-size: 0.45em;
+    }
+}
+
+/* Print styles for PDF export */
+@media print {
+    .reveal .slides section .fragment {
+        opacity: 1;
+        visibility: visible;
+    }
+}
