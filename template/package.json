@@ -1,0 +1,24 @@
+{
+  "name": "beautiful-slides",
+  "version": "1.0.0",
+  "description": "Beautiful presentations with reveal.js",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx reveal-js serve",
+    "build": "npx reveal-js export",
+    "dev": "npx http-server . -p 8080"
+  },
+  "dependencies": {
+    "reveal.js": "^5.0.4"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "keywords": [
+    "presentation",
+    "slides",
+    "reveal.js"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Slides</title>
+    
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css" id="theme">
+    
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css">
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title slide -->
+            <section data-background-gradient="linear-gradient(to bottom, #283048, #859398)">
+                <h1>Beautiful Slides</h1>
+                <h3>Powered by Reveal.js</h3>
+                <p>
+                    <small>Created by <a href="#">Your Name</a></small>
+                </p>
+            </section>
+
+            <!-- Introduction slide -->
+            <section>
+                <h2>Welcome</h2>
+                <p>This is your first slide presentation with reveal.js</p>
+                <ul>
+                    <li>Beautiful transitions</li>
+                    <li>Touch and keyboard navigation</li>
+                    <li>Code syntax highlighting</li>
+                    <li>PDF export support</li>
+                </ul>
+            </section>
+
+            <!-- Code example slide -->
+            <section>
+                <h2>Code Highlighting</h2>
+                <pre><code data-trim data-noescape>
+function hello() {
+    console.log("Hello, World!");
+    return "Beautiful slides!";
+}
+                </code></pre>
+            </section>
+
+            <!-- Vertical slides example -->
+            <section>
+                <section>
+                    <h2>Vertical Slides</h2>
+                    <p>Slides can be nested inside each other.</p>
+                    <p>Use the space key to navigate through all slides.</p>
+                    <br>
+                    <a href="#" class="navigate-down">
+                        <img width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+                    </a>
+                </section>
+                <section>
+                    <h2>Basement Level 1</h2>
+                    <p>Nested slides are great for adding detail.</p>
+                </section>
+                <section>
+                    <h2>Basement Level 2</h2>
+                    <p>That's it, time to go back up.</p>
+                    <br>
+                    <a href="#/2">
+                        <img width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow" style="transform: rotate(180deg);">
+                    </a>
+                </section>
+            </section>
+
+            <!-- Background image slide -->
+            <section data-background="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&h=800&fit=crop">
+                <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Background Images</h2>
+                <p style="color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Set beautiful background images for your slides</p>
+            </section>
+
+            <!-- Fragment animations -->
+            <section>
+                <h2>Fragment Animations</h2>
+                <p class="fragment">Fade in</p>
+                <p class="fragment fade-out">Fade out</p>
+                <p class="fragment highlight-red">Highlight red</p>
+                <p class="fragment fade-in-then-out">Fade in, then out</p>
+                <p class="fragment fade-up">Slide up while fading in</p>
+            </section>
+
+            <!-- Thank you slide -->
+            <section data-background-gradient="linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6)">
+                <h1>Thank You!</h1>
+                <p>Questions?</p>
+                <p>
+                    <small>Press ESC to see slide overview</small>
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <script src="node_modules/reveal.js/dist/reveal.js"></script>
+    <script src="node_modules/reveal.js/plugin/notes/notes.js"></script>
+    <script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="node_modules/reveal.js/plugin/zoom/zoom.js"></script>
+    <script src="node_modules/reveal.js/plugin/search/search.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+            
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [ 
+                RevealMarkdown, 
+                RevealHighlight, 
+                RevealNotes,
+                RevealZoom,
+                RevealSearch
+            ]
+        });
+    </script>
+</body>
+</html>
