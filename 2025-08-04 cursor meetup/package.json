@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "npx http-server . -p 8080",
-    "build": "mkdir -p dist && cp -r *.html css images slides node_modules dist/ && echo 'Build completed successfully'",
+    "build": "rm -rf dist && mkdir -p dist && cp -r *.html css images slides dist/ && mkdir -p dist/node_modules && cp -r node_modules/reveal.js dist/node_modules/ && echo 'Build completed successfully'",
     "dev": "npx http-server . -p 8080"
   },
   "dependencies": {
