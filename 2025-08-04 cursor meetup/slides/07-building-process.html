@@ -1,0 +1,32 @@
+<!-- Slide 7: Building Process -->
+<section>
+    <h2>构建自定义 MCP 服务流程</h2>
+    <div style="text-align: left;">
+        <ol>
+            <li class="fragment">
+                <strong>需求定义</strong>
+                <ul><li>明确每个工具职责、输入输出规格</li></ul>
+            </li>
+            <li class="fragment">
+                <strong>协议与版本管理</strong>
+                <ul><li><code>server_info.version</code> 与 <code>protocolVersion</code></li></ul>
+            </li>
+            <li class="fragment">
+                <strong>认证授权</strong>
+                <ul><li>API Key、权限分级</li></ul>
+            </li>
+            <li class="fragment">
+                <strong>实现</strong>
+                <ul><li>接口规范 → 代码骨架 → 中间件（日志、超时）</li></ul>
+            </li>
+            <li class="fragment">
+                <strong>测试与调试</strong>
+                <ul><li>单元/集成/协议测试；结构化日志；链路追踪</li></ul>
+            </li>
+        </ol>
+    </div>
+    <aside class="notes">
+        整个服务构建从需求出发：先画出工具边界和参数，再定义协议版本号和认证方式。
+        代码实现时引入中间件统一管控日志与超时，最后通过多层测试和链路追踪保证可靠性。
+    </aside>
+</section>

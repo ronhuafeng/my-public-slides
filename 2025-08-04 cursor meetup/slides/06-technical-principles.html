@@ -1,0 +1,32 @@
+<!-- Slide 6: Technical Principles -->
+<section>
+    <h2>技术原理深度解析</h2>
+    <div style="text-align: left;">
+        <ol>
+            <li class="fragment">
+                <strong>JSON-RPC 2.0</strong>
+                <ul>
+                    <li><code>method</code>: 工具名，如 <code>database_query</code></li>
+                    <li><code>params</code>: 结构化参数</li>
+                </ul>
+            </li>
+            <li class="fragment">
+                <strong>资源（Resources）</strong>
+                <ul><li>文件、配置、统计数据</li></ul>
+            </li>
+            <li class="fragment">
+                <strong>提示模板（Prompts）</strong>
+                <ul><li>预设场景、可复用的提示</li></ul>
+            </li>
+            <li class="fragment">
+                <strong>工具（Tools）</strong>
+                <ul><li>单一职责、输入校验、幂等性</li></ul>
+            </li>
+        </ol>
+    </div>
+    <aside class="notes">
+        MCP 基于 JSON-RPC，模型发起请求时，用 `method` 调用工具、通过 `params` 传入结构化参数。
+        资源描述、提示模板和工具定义共同构成了 MCP 能力集。
+        关键在于单一职责设计、严格校验输入、保证幂等性。
+    </aside>
+</section>

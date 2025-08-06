@@ -14,382 +14,43 @@
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/custom.css">
     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义 MCP 服务在业务系统中的构建与应用</title>
+    
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css" id="theme">
+    
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css">
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/custom.css">
+    
     <!-- Draw.io Viewer Scripts (Online) -->
     <script src="https://www.draw.io/js/viewer.min.js"></script>
 </head>
 <body>
     <div class="reveal">
         <div class="slides">
-                <!-- Slide 8.5: PPAP Debug Workflow Diagram -->
-            <section>
-                <h2>PPAP 调试工作流程</h2>
-                <div data-drawio-src="./images/ppap-debug-workflow.xml" style="width: auto; height: 80vh; border: 1px solid #444; margin: 20px auto;"></div>
-                <aside class="notes">
-                    这个流程图展示了 PPAP 服务的完整调试工作流程。
-                    从启动服务开始，通过监控状态，判断服务健康性，到问题排查和修复的完整链路。
-                    这正是我们在实际业务中使用 MCP 服务时需要遵循的标准调试流程。
-                </aside>
-            </section>
-            <!-- Slide 1: Title slide -->
-            <section data-background-gradient="linear-gradient(to bottom, #283048, #859398)">
-                <h1>自定义 MCP 服务在业务系统中的构建与应用</h1>
-                <h3>Building and Applying Custom MCP Services in Business Systems</h3>
-                <p>
-                    <small>演讲者：XXX</small><br>
-                    <small>日期：2025.08.04</small><br>
-                    <small>场景：技术分享</small>
-                </p>
-                <aside class="notes">
-                    大家好，欢迎来到今天的分享。
-                    我是[姓名]，今天将和大家一起探讨如何从零开始，设计、实现并在业务系统中落地自定义 MCP （模型上下文协议）服务。
-                    内容既有理论原理，也有工具流程和实战示例，力求深入浅出。
-                </aside>
-            </section>
-
-            <!-- Slide 2: Contents -->
-            <section>
-                <h2>目录</h2>
-                <ol>
-                    <li class="fragment">MCP 概览：动机与价值</li>
-                    <li class="fragment">Cursor 中的 MCP 集成</li>
-                    <li class="fragment">自定义 MCP 的需求与痛点</li>
-                    <li class="fragment">技术原理深度解析</li>
-                    <li class="fragment">构建自定义 MCP 服务流程</li>
-                    <li class="fragment">工具与配套服务示例</li>
-                    <li class="fragment">业务案例：端到端演示</li>
-                    <li class="fragment">性能与成果指标</li>
-                    <li class="fragment">最佳实践与建议</li>
-                    <li class="fragment">总结与 Q&A</li>
-                </ol>
-                <aside class="notes">
-                    本次分享分为十个部分：
-                    首先回顾 MCP 的核心价值，再看看 Cursor IDE 如何集成 MCP。
-                    随后讨论为什么要自定义 MCP，以及技术底层；
-                    然后进入实操：从需求到服务搭建，再到示例工具流水线；
-                    最后用一个完整业务案例做端到端演示，并分享指标与最佳实践。
-                </aside>
-            </section>
-
-            <!-- Slide 3: MCP Overview -->
-            <section>
-                <h2>MCP 概览：动机与价值</h2>
-                <div style="text-align: left;">
-                    <p><strong>传统 LLM 局限：</strong>离线知识、无实时交互、无法执行操作</p>
-                    <p><strong>MCP 解决：</strong></p>
-                    <ul>
-                        <li class="fragment"><strong>连接性</strong>：打通 AI 与外部系统</li>
-                        <li class="fragment"><strong>实时性</strong>：获取最新数据、状态</li>
-                        <li class="fragment"><strong>可操作性</strong>：触发 API、脚本、部署流程</li>
-                        <li class="fragment"><strong>定制化</strong>：面向业务场景精准扩展</li>
-                    </ul>
-                </div>
-                <aside class="notes">
-                    过去我们用 LLM 只能"对话"，却无法了解实时信息，也无法直接执行业务操作。
-                    MCP 协议的核心，是把模型"变身"为拥有真实操作能力的智能助手，既要拿到最新数据，也要驱动系统执行，并且可以按场景定制。
-                </aside>
-            </section>
-
-            <!-- Slide 4: Cursor IDE MCP Integration -->
-            <section>
-                <h2>Cursor IDE 中的 MCP 集成</h2>
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <p><strong>架构：</strong>Cursor IDE ⇄ MCP 客户端 ⇄ MCP 服务端 ⇄ 业务系统</p>
-                </div>
-                <div style="text-align: left;">
-                    <p><strong>核心能力：</strong></p>
-                    <ul>
-                        <li class="fragment">扫描并发现配置的 MCP 服务</li>
-                        <li class="fragment">能力协商：列出可用工具、资源、提示模板</li>
-                        <li class="fragment">智能路由：根据意图挑选最优工具</li>
-                        <li class="fragment">错误处理：超时重试与降级</li>
-                    </ul>
-                </div>
-                <aside class="notes">
-                    在 Cursor IDE 中，只需在 `.cursor-settings/mcp.json` 中配置服务，IDE 会自动发现并协商能力。
-                    当用户输入自然语言请求时，Cursor 解析意图，路由到对应工具，拿到结果后再呈现给用户，并且对失败场景做优雅处理。
-                </aside>
-            </section>
-
-            <!-- Slide 5: Custom MCP Needs -->
-            <section>
-                <h2>自定义 MCP 的需求与痛点</h2>
-                <div style="display: flex; justify-content: space-between;">
-                    <div style="width: 48%;">
-                        <h3>典型痛点：</h3>
-                        <ul>
-                            <li class="fragment">重复性高：代码审查、报告生成</li>
-                            <li class="fragment">跨系统查询：多源数据聚合</li>
-                            <li class="fragment">部署运维：脚本化、回滚</li>
-                        </ul>
-                    </div>
-                    <div style="width: 48%;">
-                        <h3>业务需求：</h3>
-                        <ol>
-                            <li class="fragment"><strong>领域特定</strong>：内部 API、专有格式</li>
-                            <li class="fragment"><strong>安全合规</strong>：内网访问、权限审计</li>
-                            <li class="fragment"><strong>性能优化</strong>：延迟与吞吐</li>
-                        </ol>
-                    </div>
-                </div>
-                <aside class="notes">
-                    为什么要自己编写 MCP 服务？
-                    企业有很多场景需要定制：内部 API、特殊数据格式，以及安全合规的要求，都让"通用"服务无法满足。
-                    同时，大量并发场景下对延迟和吞吐也要做针对性优化。
-                </aside>
-            </section>
-
-            <!-- Slide 6: Technical Principles -->
-            <section>
-                <h2>技术原理深度解析</h2>
-                <div style="text-align: left;">
-                    <ol>
-                        <li class="fragment">
-                            <strong>JSON-RPC 2.0</strong>
-                            <ul>
-                                <li><code>method</code>: 工具名，如 <code>database_query</code></li>
-                                <li><code>params</code>: 结构化参数</li>
-                            </ul>
-                        </li>
-                        <li class="fragment">
-                            <strong>资源（Resources）</strong>
-                            <ul><li>文件、配置、统计数据</li></ul>
-                        </li>
-                        <li class="fragment">
-                            <strong>提示模板（Prompts）</strong>
-                            <ul><li>预设场景、可复用的提示</li></ul>
-                        </li>
-                        <li class="fragment">
-                            <strong>工具（Tools）</strong>
-                            <ul><li>单一职责、输入校验、幂等性</li></ul>
-                        </li>
-                    </ol>
-                </div>
-                <aside class="notes">
-                    MCP 基于 JSON-RPC，模型发起请求时，用 `method` 调用工具、通过 `params` 传入结构化参数。
-                    资源描述、提示模板和工具定义共同构成了 MCP 能力集。
-                    关键在于单一职责设计、严格校验输入、保证幂等性。
-                </aside>
-            </section>
-
-            <!-- Slide 7: Building Process -->
-            <section>
-                <h2>构建自定义 MCP 服务流程</h2>
-                <div style="text-align: left;">
-                    <ol>
-                        <li class="fragment">
-                            <strong>需求定义</strong>
-                            <ul><li>明确每个工具职责、输入输出规格</li></ul>
-                        </li>
-                        <li class="fragment">
-                            <strong>协议与版本管理</strong>
-                            <ul><li><code>server_info.version</code> 与 <code>protocolVersion</code></li></ul>
-                        </li>
-                        <li class="fragment">
-                            <strong>认证授权</strong>
-                            <ul><li>API Key、权限分级</li></ul>
-                        </li>
-                        <li class="fragment">
-                            <strong>实现</strong>
-                            <ul><li>接口规范 → 代码骨架 → 中间件（日志、超时）</li></ul>
-                        </li>
-                        <li class="fragment">
-                            <strong>测试与调试</strong>
-                            <ul><li>单元/集成/协议测试；结构化日志；链路追踪</li></ul>
-                        </li>
-                    </ol>
-                </div>
-                <aside class="notes">
-                    整个服务构建从需求出发：先画出工具边界和参数，再定义协议版本号和认证方式。
-                    代码实现时引入中间件统一管控日志与超时，最后通过多层测试和链路追踪保证可靠性。
-                </aside>
-            </section>
-
-            <!-- Slide 8: Tools and Services Example -->
-            <section>
-                <h2>工具与配套服务示例</h2>
-                <div style="text-align: left;">
-                    <div class="fragment">
-                        <h3>示例工具：<code>check_project_health</code></h3>
-                        <ul>
-                            <li>输入：<code>project_path</code>、<code>include_security</code></li>
-                            <li>输出：构建状态、测试覆盖率、安全扫描报告</li>
-                        </ul>
-                    </div>
-                    <div class="fragment">
-                        <h3>服务链路：</h3>
-                        <ol>
-                            <li>MCP → CI 系统 API</li>
-                            <li>MCP → 静态代码扫描器</li>
-                            <li>MCP → 报告存储服务</li>
-                        </ol>
-                    </div>
-                    <div class="fragment">
-                        <h3>辅助服务：</h3>
-                        <ul>
-                            <li>监控与告警</li>
-                            <li>缓存层（Redis）</li>
-                            <li>审计与审计日志</li>
-                        </ul>
-                    </div>
-                </div>
-                <aside class="notes">
-                    以 `check_project_health` 为例：它串联了三个后端服务——CI、扫描器、报告库。
-                    MCP 服务本身需要依赖缓存层来提升性能，并产生日志供审计和监控。
-                </aside>
-            </section>
-
-            <!-- Slide 9: Business Case Demo -->
-            <section>
-                <h2>业务案例：端到端演示</h2>
-                <div style="text-align: left;">
-                    <div class="fragment">
-                        <h3>场景：新品上线前健康检查</h3>
-                    </div>
-                    <div class="fragment">
-                        <h3>流程：</h3>
-                        <ol>
-                            <li>用户发起"检查项目健康"请求</li>
-                            <li>MCP 服务调用多项子工具并行执行</li>
-                            <li>聚合结果并按模板生成报告</li>
-                            <li>报告存储到文档系统并触发通知</li>
-                        </ol>
-                    </div>
-                    <div class="fragment">
-                        <h3>关键代码片段（示意）</h3>
-                        <pre><code data-trim data-noescape>
-async function checkProjectHealth(projectPath, includeSecurity) {
-    const results = await Promise.all([
-        checkBuildStatus(projectPath),
-        checkTestCoverage(projectPath),
-        includeSecurity ? scanSecurity(projectPath) : null
-    ]);
-    return generateHealthReport(results);
-}
-                        </code></pre>
-                    </div>
-                </div>
-                <aside class="notes">
-                    这里演示一次完整业务流程：在新品版本上线前，自动触发健康检查，返回一个合格/不合格的报告，并推送到 Slack。
-                    MCP 服务并行执行各子任务，最后聚合成标准化文档，流程自动化全链路闭环。
-                </aside>
-            </section>
-
-            <!-- Slide 10: Performance Metrics -->
-            <section>
-                <h2>性能与成果指标</h2>
-                <table style="width: 100%; font-size: 0.8em;">
-                    <thead>
-                        <tr>
-                            <th>指标</th>
-                            <th>优化前</th>
-                            <th>优化后</th>
-                            <th>提升</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="fragment">
-                            <td>平均响应延迟</td>
-                            <td>2.5 s</td>
-                            <td>0.8 s</td>
-                            <td style="color: #4CAF50;">68% ↓</td>
-                        </tr>
-                        <tr class="fragment">
-                            <td>并发处理能力</td>
-                            <td>50 req/s</td>
-                            <td>200 req/s</td>
-                            <td style="color: #4CAF50;">300% ↑</td>
-                        </tr>
-                        <tr class="fragment">
-                            <td>调用成功率</td>
-                            <td>92%</td>
-                            <td>99.2%</td>
-                            <td style="color: #4CAF50;">+7.8 pt</td>
-                        </tr>
-                        <tr class="fragment">
-                            <td>重复任务自动化率</td>
-                            <td>0%</td>
-                            <td>90%</td>
-                            <td style="color: #4CAF50;">—</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <aside class="notes">
-                    量化效果：通过缓存、并行与降级策略，响应速度提升约 68%，并发能从 50 req/s 提升到 200 req/s。
-                    自动化覆盖率达 90%，大幅降低了人工重复操作成本。
-                </aside>
-            </section>
-
-            <!-- Slide 11: Best Practices -->
-            <section>
-                <h2>最佳实践与建议</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: left;">
-                    <div>
-                        <h3 class="fragment">设计原则</h3>
-                        <ul class="fragment">
-                            <li>单一职责、清晰接口、易扩展</li>
-                        </ul>
-                        
-                        <h3 class="fragment">开发方法</h3>
-                        <ul class="fragment">
-                            <li>测试驱动、逐步迭代、文档优先</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="fragment">运维要点</h3>
-                        <ul class="fragment">
-                            <li>监控告警、链路追踪、版本平滑升级</li>
-                        </ul>
-                        
-                        <h3 class="fragment">安全合规</h3>
-                        <ul class="fragment">
-                            <li>最小权限、审计日志、加密存储</li>
-                        </ul>
-                    </div>
-                </div>
-                <aside class="notes">
-                    总结一下：保持工具粒度小且职责单一，先写测试再写代码，接口文档要完善。
-                    生产环境要覆盖监控与链路追踪，并制定平滑升级与回滚策略，确保安全与可靠。
-                </aside>
-            </section>
-
-            <!-- Slide 12: Summary -->
-            <section>
-                <h2>总结与展望</h2>
-                <div style="text-align: left;">
-                    <ul>
-                        <li class="fragment"><strong>MCP</strong>：AI 与业务系统的桥梁</li>
-                        <li class="fragment"><strong>自定义</strong>：满足企业特定安全、性能与流程需求</li>
-                        <li class="fragment"><strong>成功要素</strong>：规范设计、完善测试、持续优化</li>
-                        <li class="fragment"><strong>未来方向</strong>：AI 原生开发，行业标准化工具库，智能协作网络</li>
-                    </ul>
-                </div>
-                <aside class="notes">
-                    今天我们看到了 MCP 的理念、原理和实战路径；
-                    自定义 MCP 服务不仅能解放双手，还能提升业务效率与质量。
-                    未来，我们期待更多 AI 原生的开发工具与标准化生态，共建智能协作网络。
-                </aside>
-            </section>
-
-            <!-- Slide 13: Q&A -->
-            <section data-background-gradient="linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6)">
-                <h1>Q&A</h1>
-                <div style="text-align: left; color: white; margin-top: 50px;">
-                    <ul>
-                        <li>如何在现有 CI/CD 流程中引入 MCP？</li>
-                        <li>针对高并发场景，哪些降级策略最有效？</li>
-                        <li>鉴权与审计的最佳实践有哪些？</li>
-                        <li>……</li>
-                    </ul>
-                </div>
-                <p style="margin-top: 50px;">
-                    <small>欢迎大家提问交流</small><br>
-                    <small>谢谢！</small>
-                </p>
-                <aside class="notes">
-                    欢迎大家提问交流，也可以会后添加我的联系方式进一步探讨。
-                    谢谢！
-                </aside>
-            </section>
+            <!-- Include all slide files -->
+            <div data-external="slides/08.5-ppap-workflow.html"></div>
+            <div data-external="slides/01-title.html"></div>
+            <div data-external="slides/02-contents.html"></div>
+            <div data-external="slides/03-mcp-overview.html"></div>
+            <div data-external="slides/04-cursor-integration.html"></div>
+            <div data-external="slides/05-custom-needs.html"></div>
+            <div data-external="slides/06-technical-principles.html"></div>
+            <div data-external="slides/07-building-process.html"></div>
+            <div data-external="slides/08-tools-examples.html"></div>
+            <div data-external="slides/09-business-demo.html"></div>
+            <div data-external="slides/10-performance-metrics.html"></div>
+            <div data-external="slides/11-best-practices.html"></div>
+            <div data-external="slides/12-summary.html"></div>
+            <div data-external="slides/13-qa.html"></div>
         </div>
     </div>
 
@@ -401,35 +62,55 @@ async function checkProjectHealth(projectPath, includeSecurity) {
     <script src="node_modules/reveal.js/plugin/search/search.js"></script>
 
     <script>
-        Reveal.initialize({
-            hash: true,
-            controls: true,
-            progress: true,
-            center: true,
-            transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Custom function to load external HTML slides
+        async function loadExternalSlides() {
+            const externalElements = document.querySelectorAll('[data-external]');
             
-            // 16:9 aspect ratio
-            width: 1920,
-            height: 1080,
-            
-            // Learn about plugins: https://revealjs.com/plugins/
-            plugins: [ 
-                RevealMarkdown, 
-                RevealHighlight, 
-                RevealNotes,
-                RevealZoom,
-                RevealSearch
-            ]
-        });
+            for (const element of externalElements) {
+                const src = element.getAttribute('data-external');
+                try {
+                    const response = await fetch(src);
+                    const html = await response.text();
+                    element.outerHTML = html;
+                } catch (error) {
+                    console.error(`Failed to load slide: ${src}`, error);
+                    element.innerHTML = `<section><h2>Error</h2><p>Failed to load slide: ${src}</p></section>`;
+                }
+            }
+        }
 
-        // Initialize all draw.io diagrams when reveal.js is ready
-        Reveal.addEventListener('ready', function() {
-            initializeAllDrawioDiagrams();
-        });
+        // Load external slides first, then initialize Reveal.js
+        loadExternalSlides().then(() => {
+            Reveal.initialize({
+                hash: true,
+                controls: true,
+                progress: true,
+                center: true,
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+                
+                // 16:9 aspect ratio
+                width: 1920,
+                height: 1080,
+                
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [ 
+                    RevealMarkdown, 
+                    RevealHighlight, 
+                    RevealNotes,
+                    RevealZoom,
+                    RevealSearch
+                ]
+            });
 
-        // Also initialize when navigating to slides with diagrams
-        Reveal.addEventListener('slidechanged', function(event) {
-            initializeDrawioDiagramsInSlide(event.currentSlide);
+            // Initialize all draw.io diagrams when reveal.js is ready
+            Reveal.addEventListener('ready', function() {
+                initializeAllDrawioDiagrams();
+            });
+
+            // Also initialize when navigating to slides with diagrams
+            Reveal.addEventListener('slidechanged', function(event) {
+                initializeDrawioDiagramsInSlide(event.currentSlide);
+            });
         });
 
         function initializeAllDrawioDiagrams() {
@@ -492,3 +173,4 @@ async function checkProjectHealth(projectPath, includeSecurity) {
     </script>
 </body>
 </html>
+                <h2>构建自定义 MCP 服务流程</h2>

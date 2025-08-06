@@ -1,0 +1,35 @@
+<!-- Slide 9: Business Case Demo -->
+<section>
+    <h2>业务案例：端到端演示</h2>
+    <div style="text-align: left;">
+        <div class="fragment">
+            <h3>场景：新品上线前健康检查</h3>
+        </div>
+        <div class="fragment">
+            <h3>流程：</h3>
+            <ol>
+                <li>用户发起"检查项目健康"请求</li>
+                <li>MCP 服务调用多项子工具并行执行</li>
+                <li>聚合结果并按模板生成报告</li>
+                <li>报告存储到文档系统并触发通知</li>
+            </ol>
+        </div>
+        <div class="fragment">
+            <h3>关键代码片段（示意）</h3>
+            <pre><code data-trim data-noescape>
+async function checkProjectHealth(projectPath, includeSecurity) {
+    const results = await Promise.all([
+        checkBuildStatus(projectPath),
+        checkTestCoverage(projectPath),
+        includeSecurity ? scanSecurity(projectPath) : null
+    ]);
+    return generateHealthReport(results);
+}
+            </code></pre>
+        </div>
+    </div>
+    <aside class="notes">
+        这里演示一次完整业务流程：在新品版本上线前，自动触发健康检查，返回一个合格/不合格的报告，并推送到 Slack。
+        MCP 服务并行执行各子任务，最后聚合成标准化文档，流程自动化全链路闭环。
+    </aside>
+</section>
