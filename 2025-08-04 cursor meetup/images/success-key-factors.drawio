@@ -1,0 +1,78 @@
+<mxfile host="65bd71144e">
+    <diagram name="成功关键因素" id="success-key-factors">
+        <mxGraphModel dx="489" dy="532" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="AI算法优化成功的关键因素" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#2c3e50;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="40" width="360" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="center" value="成功的&#xa;关键循环" style="ellipse;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;fillColor=#e8f5e8;strokeColor=#4CAF50;strokeWidth=3;fontColor=#2c3e50;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="360" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="domain-knowledge" value="&lt;b&gt;领域知识注入&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;• 结构化专家经验&lt;br/&gt;• 提供上下文指导&lt;br/&gt;• 提升生成质量" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e3f2fd;strokeColor=#2196F3;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=15;spacingTop=10;fontColor=#2c3e50;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="180" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="progressive-optimization" value="&lt;b&gt;渐进式优化&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;• 从简单规则开始&lt;br/&gt;• 逐步增加复杂性&lt;br/&gt;• 确保稳定基础" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e8f5e8;strokeColor=#4CAF50;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=15;spacingTop=10;fontColor=#2c3e50;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="120" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="auto-feedback" value="&lt;b&gt;自动化反馈&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;• 测试-反馈-优化闭环&lt;br/&gt;• 快速学习改进&lt;br/&gt;• 持续迭代提升" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff3e0;strokeColor=#FF9800;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=15;spacingTop=10;fontColor=#2c3e50;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="180" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge1" value="指导算法设计" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#2196F3;strokeWidth=2;fontSize=10;fontColor=#2c3e50;" parent="1" source="domain-knowledge" target="center" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="400" y="270"/>
+                            <mxPoint x="400" y="410"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge2" value="稳定推进" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#4CAF50;strokeWidth=2;fontSize=10;fontColor=#2c3e50;" parent="1" source="progressive-optimization" target="center" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge3" value="持续改进" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF9800;strokeWidth=2;fontSize=10;fontColor=#2c3e50;" parent="1" source="auto-feedback" target="center" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="760" y="270"/>
+                            <mxPoint x="760" y="410"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge4" value="提供优化方向" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeColor=#9C27B0;strokeWidth=1.5;fontSize=9;fontColor=#9C27B0;dashed=1;" parent="1" source="domain-knowledge" target="progressive-optimization" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="270" y="150"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge5" value="产生测试需求" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeColor=#9C27B0;strokeWidth=1.5;fontSize=9;fontColor=#9C27B0;dashed=1;" parent="1" source="progressive-optimization" target="auto-feedback" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="890" y="150"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge6" value="验证知识有效性" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;strokeColor=#9C27B0;strokeWidth=1.5;fontSize=9;fontColor=#9C27B0;dashed=1;" parent="1" source="auto-feedback" target="domain-knowledge" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="840" y="100"/>
+                            <mxPoint x="320" y="100"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="legend" value="💡 三个关键因素形成相互促进的反馈循环，&lt;br&gt;共同驱动 AI 算法优化过程的成功" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#f5f5f5;strokeColor=#cccccc;strokeWidth=1;fontColor=#2c3e50;align=center;fontStyle=2;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="540" width="400" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="practice-point1" value="实践要点 1：&#xa;专家经验结构化" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f8f9fa;strokeColor=#6c757d;strokeWidth=1;fontColor=#495057;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="320" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="practice-point2" value="实践要点 2：&#xa;小步快跑验证" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f8f9fa;strokeColor=#6c757d;strokeWidth=1;fontColor=#495057;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="280" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="practice-point3" value="实践要点 3：&#xa;完整测试闭环" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f8f9fa;strokeColor=#6c757d;strokeWidth=1;fontColor=#495057;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="920" y="320" width="120" height="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

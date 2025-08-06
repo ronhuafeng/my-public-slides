@@ -4,14 +4,15 @@
   "description": "Beautiful presentations with reveal.js",
   "main": "index.html",
   "scripts": {
-    "start": "npx http-server . -p 8080",
+    "start": "browser-sync start --server --files \"**/*\" --port 8080",
     "build": "rm -rf dist && mkdir -p dist && cp -r *.html css images slides dist/ && mkdir -p dist/node_modules && cp -r node_modules/reveal.js dist/node_modules/ && echo 'Build completed successfully'",
-    "dev": "npx http-server . -p 8080"
+    "dev": "browser-sync start --server --files \"**/*\" --port 8080"
   },
   "dependencies": {
     "reveal.js": "^5.0.4"
   },
   "devDependencies": {
+    "browser-sync": "^3.0.4",
     "http-server": "^14.1.1"
   },
   "keywords": [
