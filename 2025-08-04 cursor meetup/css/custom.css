@@ -1,20 +1,20 @@
-/* Custom styles for beautiful slides */
+/* Custom styles for beautiful slides - Maple Light Theme */
 
-/* Draw.io diagram container styling - Updated for generic implementation */
+/* Draw.io diagram container styling - Updated for light theme */
 [data-drawio-src] {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(248, 250, 252, 0.95);
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(71, 85, 105, 0.2);
     overflow: auto;
     /* max-width: 90vw; */
     /* max-height: 80vh; */
     margin: 20px auto;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(71, 85, 105, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
-/* Make draw.io diagrams work well with dark theme */
+/* Make draw.io diagrams work well with light theme */
 .reveal [data-drawio-src] .geDiagramContainer {
     background-color: #ffffff !important;
     max-width: 100%;
@@ -31,6 +31,8 @@
 
 .reveal {
     font-family: "Source Sans Pro", Helvetica, sans-serif;
+    background-color: #fcfdf4; /* Maple Light background */
+    color: #475569; /* Maple Light foreground */
 }
 
 .reveal h1,
@@ -45,6 +47,7 @@
     text-transform: none;
     text-shadow: none;
     word-wrap: break-word;
+    color: #334155; /* Darker blue for headings */
 }
 
 /* Custom gradient backgrounds */
@@ -52,7 +55,7 @@
     background-attachment: fixed;
 }
 
-/* Code blocks styling */
+/* Code blocks styling - Maple Light Theme */
 .reveal pre {
     display: block;
     position: relative;
@@ -63,40 +66,102 @@
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
     line-height: 1.2em;
     word-wrap: break-word;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 5px 15px rgba(71, 85, 105, 0.15);
     border-radius: 5px;
+    background-color: #f8fafc;
+    border: 1px solid rgba(148, 163, 184, 0.3);
 }
 
 .reveal code {
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
     text-transform: none;
+    background-color: rgba(226, 232, 240, 0.6);
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: #1e293b;
 }
 
-/* Navigation improvements */
+/* Maple Light Code Highlighting */
+.reveal pre code {
+    background: #f8fafc;
+    color: #475569; /* Main text color */
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Syntax highlighting for Maple Light theme */
+.reveal pre code .hljs-comment,
+.reveal pre code .hljs-quote {
+    color: #64748b; /* Gray for comments */
+    font-style: italic;
+}
+
+.reveal pre code .hljs-keyword,
+.reveal pre code .hljs-selector-tag,
+.reveal pre code .hljs-built_in {
+    color: #7c3aed; /* Purple for keywords */
+    font-style: italic;
+}
+
+.reveal pre code .hljs-string,
+.reveal pre code .hljs-attr {
+    color: #15803d; /* Green for strings */
+}
+
+.reveal pre code .hljs-number,
+.reveal pre code .hljs-literal {
+    color: #65a30d; /* Light green for numbers */
+}
+
+.reveal pre code .hljs-function,
+.reveal pre code .hljs-title {
+    color: #0891b2; /* Blue for functions */
+}
+
+.reveal pre code .hljs-variable,
+.reveal pre code .hljs-property {
+    color: #ca8a04; /* Yellow for variables */
+}
+
+.reveal pre code .hljs-type {
+    color: #ea580c; /* Orange for types */
+}
+
+.reveal pre code .hljs-operator {
+    color: #0891b2; /* Blue for operators */
+}
+
+.reveal pre code .hljs-tag {
+    color: #dc2626; /* Red for HTML tags */
+}
+
+/* Navigation improvements - Maple Light */
 .reveal .controls {
-    color: #42affa;
+    color: #64748b; /* Maple Light primary */
 }
 
 .reveal .progress {
-    color: #42affa;
+    color: #64748b; /* Maple Light primary */
 }
 
-/* Slide number styling */
+/* Slide number styling - Maple Light */
 .reveal .slide-number {
-    color: #42affa;
-    background-color: rgba(0, 0, 0, 0.4);
+    color: #64748b;
+    background-color: rgba(248, 250, 252, 0.9);
     padding: 5px;
+    border: 1px solid rgba(148, 163, 184, 0.3);
 }
 
-/* Link styling */
+/* Link styling - Maple Light */
 .reveal a {
-    color: #42affa;
+    color: #0891b2; /* Maple Light blue */
     text-decoration: none;
     transition: color .15s ease;
 }
 
 .reveal a:hover {
-    color: #6ca0e8;
+    color: #0e7490; /* Darker blue on hover */
     text-shadow: none;
     border: none;
 }
@@ -108,10 +173,10 @@
     margin: 0 0 0 1em;
 }
 
-/* Fragment animations customization */
+/* Fragment animations customization - Maple Light */
 .reveal .fragment.highlight-current-blue,
 .reveal .fragment.current-fragment.highlight-current-blue {
-    color: #42affa;
+    color: #0891b2; /* Maple Light blue */
 }
 
 /* Custom slide transitions */
@@ -170,25 +235,26 @@
     align-items: flex-start;
     gap: 20px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(226, 232, 240, 0.3); /* Light gray background */
     border-radius: 10px;
-    border-left: 4px solid #87ceeb;
+    border-left: 4px solid #64748b; /* Maple Light primary */
 }
 
 .benefit-icon {
     font-size: 2em;
     min-width: 50px;
+    color: #64748b; /* Maple Light primary */
 }
 
 .benefit-item h4 {
-    color: #87ceeb;
+    color: #334155; /* Darker blue for emphasis */
     margin: 0 0 10px 0;
     font-size: 1.2em;
 }
 
 .benefit-item p {
     margin: 0;
-    color: #e0e0e0;
+    color: #475569; /* Maple Light foreground */
     line-height: 1.5;
 }
 
@@ -201,20 +267,23 @@
 }
 
 .principle-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(226, 232, 240, 0.3); /* Light background */
     padding: 25px;
     border-radius: 12px;
-    border-top: 4px solid #87ceeb;
+    border-top: 4px solid #64748b; /* Maple Light primary */
     transition: transform 0.3s ease;
+    color: #475569; /* Maple Light text */
 }
 
 .principle-card:hover {
     transform: translateY(-5px);
+    background: rgba(226, 232, 240, 0.4);
 }
 
 .principle-card h4 {
     margin: 0 0 15px 0;
     font-size: 1.2em;
+    color: #334155; /* Darker heading */
 }
 
 .principle-card ul {
@@ -244,16 +313,18 @@
     line-height: 1.4;
 }
 
-/* Step Box */
+/* Step Box - Maple Light */
 .step-box {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(226, 232, 240, 0.3);
     padding: 25px;
     border-radius: 10px;
-    border-left: 5px solid #87ceeb;
+    border-left: 5px solid #64748b; /* Maple Light primary */
+    color: #475569;
 }
 
 .step-box h4 {
     margin-top: 0;
+    color: #334155;
 }
 
 .step-box ol {
@@ -261,20 +332,22 @@
     text-align: left;
 }
 
-/* Tool Info Sections */
+/* Tool Info Sections - Maple Light */
 .tool-info {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(187, 247, 208, 0.3); /* Light green */
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
-    border-left: 4px solid #98fb98;
+    border-left: 4px solid #059669; /* Green accent */
+    color: #475569;
 }
 
 .key-features {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(254, 240, 138, 0.3); /* Light yellow */
     padding: 20px;
     border-radius: 8px;
-    border-left: 4px solid #ffd700;
+    border-left: 4px solid #d97706; /* Orange accent */
+    color: #475569;
 }
 
 .key-features h5 {
@@ -293,18 +366,20 @@
     line-height: 1.4;
 }
 
-/* Technique Boxes */
+/* Technique Boxes - Maple Light */
 .technique-box {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(226, 232, 240, 0.3);
     padding: 25px;
     border-radius: 10px;
     margin: 20px 0;
     border-left: 4px solid;
+    color: #475569;
 }
 
 .technique-box h4 {
     margin-top: 0;
     margin-bottom: 15px;
+    color: #334155;
 }
 
 .technique-box ul {
@@ -313,20 +388,22 @@
     padding-left: 20px;
 }
 
-/* Quality Control Sections */
+/* Quality Control Sections - Maple Light */
 .quality-control {
-    background: rgba(135, 206, 235, 0.1);
+    background: rgba(186, 230, 253, 0.4); /* Light blue */
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 30px;
-    border-left: 4px solid #87ceeb;
+    border-left: 4px solid #0891b2; /* Blue accent */
+    color: #475569;
 }
 
 .checklist {
-    background: rgba(255, 215, 0, 0.1);
+    background: rgba(254, 240, 138, 0.4); /* Light yellow */
     padding: 25px;
     border-radius: 10px;
-    border-left: 4px solid #ffd700;
+    border-left: 4px solid #d97706; /* Orange accent */
+    color: #475569;
 }
 
 .checklist ul {
@@ -346,20 +423,21 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(226, 232, 240, 0.3);
     padding: 20px;
     border-radius: 10px;
     transition: all 0.3s ease;
+    color: #475569;
 }
 
 .progression-step:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(226, 232, 240, 0.5);
     transform: translateX(10px);
 }
 
 .step-number {
-    background: linear-gradient(45deg, #87ceeb, #98fb98);
-    color: #000;
+    background: linear-gradient(45deg, #64748b, #059669); /* Maple Light colors */
+    color: #ffffff;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -377,12 +455,12 @@
 
 .step-content h4 {
     margin: 0 0 8px 0;
-    color: #87ceeb;
+    color: #334155; /* Darker heading */
 }
 
 .step-content p {
     margin: 0;
-    color: #e0e0e0;
+    color: #475569;
     line-height: 1.4;
 }
 
@@ -395,24 +473,26 @@
 }
 
 .step-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(226, 232, 240, 0.3);
     padding: 25px;
     border-radius: 12px;
     border-top: 4px solid;
     text-align: left;
+    color: #475569;
 }
 
 .step-card:first-child {
-    border-top-color: #87ceeb;
+    border-top-color: #64748b; /* Maple Light primary */
 }
 
 .step-card:last-child {
-    border-top-color: #98fb98;
+    border-top-color: #059669; /* Green accent */
 }
 
 .step-card h4 {
     margin-top: 0;
     margin-bottom: 15px;
+    color: #334155;
 }
 
 .step-card ul {
@@ -426,10 +506,11 @@
 }
 
 .step-card code {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(148, 163, 184, 0.2);
     padding: 2px 6px;
     border-radius: 4px;
     font-size: 0.9em;
+    color: #1e293b;
 }
 
 /* Success Factors */
@@ -441,68 +522,75 @@
 }
 
 .factor-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(226, 232, 240, 0.3);
     padding: 25px;
     border-radius: 12px;
     text-align: left;
     border-left: 4px solid;
     transition: transform 0.3s ease;
+    color: #475569;
 }
 
 .factor-card:hover {
     transform: translateY(-5px);
+    background: rgba(226, 232, 240, 0.4);
 }
 
 .factor-card:nth-child(1) {
-    border-left-color: #87ceeb;
+    border-left-color: #64748b; /* Primary */
 }
 
 .factor-card:nth-child(2) {
-    border-left-color: #98fb98;
+    border-left-color: #059669; /* Green */
 }
 
 .factor-card:nth-child(3) {
-    border-left-color: #ffd700;
+    border-left-color: #d97706; /* Orange */
 }
 
 .factor-card h4 {
     margin-top: 0;
     margin-bottom: 15px;
+    color: #334155;
 }
 
 .factor-card p {
     margin: 0;
     line-height: 1.5;
-    color: #e0e0e0;
+    color: #475569;
 }
 
-/* Scenario Description */
+/* Scenario Description - Maple Light */
 .scenario-description {
-    background: rgba(135, 206, 235, 0.1);
+    background: rgba(186, 230, 253, 0.4);
     padding: 20px;
     border-radius: 8px;
-    border-left: 4px solid #87ceeb;
+    border-left: 4px solid #0891b2;
     margin-bottom: 25px;
+    color: #475569;
 }
 
 .rule-examples {
-    background: rgba(255, 215, 0, 0.1);
+    background: rgba(254, 240, 138, 0.4);
     padding: 20px;
     border-radius: 8px;
-    border-left: 4px solid #ffd700;
+    border-left: 4px solid #d97706;
     margin-bottom: 25px;
+    color: #475569;
 }
 
 .technical-approach {
-    background: rgba(152, 251, 152, 0.1);
+    background: rgba(187, 247, 208, 0.4);
     padding: 20px;
     border-radius: 8px;
-    border-left: 4px solid #98fb98;
+    border-left: 4px solid #059669;
+    color: #475569;
 }
 
 .rule-examples h4,
 .technical-approach h4 {
     margin-top: 0;
+    color: #334155;
 }
 
 .rule-examples ul,
