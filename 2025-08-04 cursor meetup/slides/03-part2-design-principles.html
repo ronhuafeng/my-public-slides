@@ -1,0 +1,61 @@
+<!-- Part 2: Design Principles -->
+<section>
+    <h2>第二部分：自定义 MCP 工具的设计理念</h2>
+</section>
+
+<section>
+    <h3>核心设计原则</h3>
+    <div class="design-principles">
+        <div class="principle-card">
+            <h4 style="color: #87ceeb;">1. 业务场景导向</h4>
+            <ul>
+                <li><strong>深度定制</strong>：针对特定业务流程优化，而非通用方案</li>
+                <li><strong>流程整合</strong>：将多个相关步骤封装为单一工具调用</li>
+                <li><strong>领域专业化</strong>：集成业务专家的经验和最佳实践</li>
+            </ul>
+        </div>
+        <div class="principle-card">
+            <h4 style="color: #98fb98;">2. 减少认知负担</h4>
+            <ul>
+                <li><strong>智能抽象</strong>：隐藏复杂的技术细节，提供简洁的接口</li>
+                <li><strong>上下文保持</strong>：工具内部维护状态，避免重复配置</li>
+                <li><strong>错误恢复</strong>：内置异常处理和自动重试机制</li>
+            </ul>
+        </div>
+        <div class="principle-card">
+            <h4 style="color: #ffd700;">3. 反馈驱动改进</h4>
+            <ul>
+                <li><strong>实时监控</strong>：集成监控和日志收集</li>
+                <li><strong>性能指标</strong>：提供可量化的效果评估</li>
+                <li><strong>持续优化</strong>：支持基于使用数据的迭代改进</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>典型应用场景</h3>
+    <div style="display: grid; grid-template-rows: repeat(3, 1fr); gap: 30px; margin-top: 30px;">
+        <div class="scenario-box">
+            <h4 style="color: #87ceeb;">开发环境管理工具</h4>
+            <pre style="text-align: left; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;"><code>功能：一键环境准备和验证
+输入：项目配置文件
+执行：依赖安装 → 服务启动 → 健康检查 → 测试运行
+输出：环境状态报告 + 问题修复建议</code></pre>
+        </div>
+        <div class="scenario-box">
+            <h4 style="color: #98fb98;">代码质量检查工具</h4>
+            <pre style="text-align: left; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;"><code>功能：全方位代码质量评估
+输入：代码仓库路径
+执行：静态分析 → 安全扫描 → 测试覆盖率 → 性能基准
+输出：质量评分 + 详细改进方案</code></pre>
+        </div>
+        <div class="scenario-box">
+            <h4 style="color: #ffd700;">部署流水线工具</h4>
+            <pre style="text-align: left; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;"><code>功能：自动化部署和回滚
+输入：部署配置 + 目标环境
+执行：构建镜像 → 部署服务 → 烟雾测试 → 流量切换
+输出：部署结果 + 监控链接</code></pre>
+        </div>
+    </div>
+</section>

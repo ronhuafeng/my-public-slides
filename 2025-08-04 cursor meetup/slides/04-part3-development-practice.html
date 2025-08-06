@@ -1,0 +1,90 @@
+<!-- Part 3: Development Practice -->
+<section>
+    <h2>第三部分：MCP 工具开发实践</h2>
+</section>
+
+<section>
+    <h3>开发实践步骤</h3>
+    <div style="text-align: left; margin: 40px;">
+        <div class="step-box">
+            <h4 style="color: #87ceeb;">步骤：</h4>
+            <ol style="font-size: 1.1em; line-height: 1.6;">
+                <li><strong>识别重复性任务</strong>：统计团队在哪些环节花费时间最多</li>
+                <li><strong>分析现有工具缺陷</strong>：找出当前方案的具体问题点</li>
+                <li><strong>评估自动化价值</strong>：计算工具开发成本 vs 长期收益</li>
+            </ol>
+        </div>
+        
+        <div style="margin-top: 40px; padding: 30px; background: rgba(255,255,255,0.1); border-left: 5px solid #98fb98;">
+            <h4 style="color: #98fb98;">示例：部署流程优化</h4>
+            <ul>
+                <li><strong>痛点</strong>：每次部署需要10+个步骤，容易出错</li>
+                <li><strong>解决</strong>：封装为一键部署工具，错误率降低90%</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>实践中孵化的 MCP 工具</h3>
+</section>
+
+<section>
+    <h4 style="color: #87ceeb;">1. Command Line Tools MCP Server</h4>
+    <div style="text-align: left; margin: 20px;">
+        <div class="tool-info">
+            <p><strong>技术架构</strong>：基于 FastMCP 命令行工具包装器</p>
+            <p><strong>核心价值</strong>：通过JSON配置文件，将任何命令行工具动态封装为标准 MCP 工具</p>
+        </div>
+        
+        <div class="key-features">
+            <h5 style="color: #ffd700;">关键特性：</h5>
+            <ul>
+                <li><strong>配置驱动</strong>：无需修改代码，纯JSON定义工具</li>
+                <li><strong>多执行模式</strong>：oneshot(一次性)、foreground(前台)、background(后台)</li>
+                <li><strong>进程管理</strong>：内置后台进程监控和管理能力</li>
+                <li><strong>健壮性设计</strong>：支持工作目录、环境变量、超时控制</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h4 style="color: #87ceeb;">2. MCP-SSE-Proxy</h4>
+    <div style="text-align: left; margin: 20px;">
+        <div class="tool-info">
+            <p><strong>技术架构</strong>：基于Next.js 14的全栈Web应用 + Docker容器化管理</p>
+            <p><strong>核心价值</strong>：MCP协议网关和管理仪表盘，解决不同传输协议间的通信障碍</p>
+        </div>
+        
+        <div class="key-features">
+            <h5 style="color: #ffd700;">关键特性：</h5>
+            <ul>
+                <li><strong>协议桥接</strong>：将stdio、HTTP、SSE等协议统一为SSE流</li>
+                <li><strong>多服务器聚合</strong>：将多个MCP服务器工具集成到单一端点</li>
+                <li><strong>可视化管理</strong>：提供Web界面进行配置、监控、控制</li>
+                <li><strong>工具级权限控制</strong>：精细化管理每个工具的访问权限</li>
+                <li><strong>实时日志系统</strong>：通过SSE提供实时日志监控</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h4 style="color: #87ceeb;">3. VSCode-Copy-for-LLM</h4>
+    <div style="text-align: left; margin: 20px;">
+        <div class="tool-info">
+            <p><strong>解决问题</strong>：优化代码上下文传递给大语言模型的格式和效率</p>
+        </div>
+        
+        <div class="key-features">
+            <h5 style="color: #ffd700;">核心功能：</h5>
+            <ul>
+                <li><strong>智能忽略</strong>：遵守.gitignore规则，支持嵌套规则正确解析</li>
+                <li><strong>可定制格式</strong>：自定义文件头、分隔符、输出格式</li>
+                <li><strong>大文件处理</strong>：文件大小限制、二进制文件自动检测</li>
+                <li><strong>用户体验</strong>：进度提示、清晰反馈、批量处理</li>
+            </ul>
+        </div>
+    </div>
+</section>

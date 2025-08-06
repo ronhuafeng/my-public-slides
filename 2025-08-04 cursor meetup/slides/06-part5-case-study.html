@@ -1,0 +1,137 @@
+<!-- Part 5: Case Study -->
+<section>
+    <h2>第五部分：实战案例</h2>
+    <h3 style="color: #87ceeb; margin-top: 40px;">构建反馈循环，利用大模型自动进行算法优化</h3>
+</section>
+
+<section>
+    <h3>场景背景：Excel 文件批量验证</h3>
+    <div style="text-align: left; margin: 40px;">
+        <div class="scenario-description">
+            <p><strong>模块任务</strong>：给定一组验证规则，使用一个 agentic workflow 去验证每个 Excel 文件是否满足这些规则，并给判断的依据。</p>
+        </div>
+        
+        <div class="rule-examples">
+            <h4 style="color: #ffd700;">规则举例：</h4>
+            <ul>
+                <li>标注为"数量"的列不为空</li>
+                <li>表格中 "完成"需要 打勾 ☑</li>
+            </ul>
+        </div>
+        
+        <div class="technical-approach">
+            <p>这个任务涉及到 Excel 文件的读取和分析。可以使用正则表达式提取、大模型判断或者一些复合手段来给出最后的判断。</p>
+            <ul>
+                <li>正则匹配 完成，然后在前后匹配 ☑ 或者类似的字符</li>
+                <li>将 Excel 转成文本，加上提示词，让大模型去判断</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>现实的问题</h3>
+    <div style="text-align: left; margin: 40px;">
+        <ul style="line-height: 1.8; font-size: 1.1em;">
+            <li><strong style="color: #ff6b6b;">Excel 文件排版不一致</strong>：导致定位特定的列的算法并不稳定</li>
+            <li><strong style="color: #ff6b6b;">复杂的 sheet 结构</strong>：文件中一个 sheet 可能有多个"区域"，即一个 sheet 其实放下了多个 sheet 的内容，区域划分是通过带有颜色的单元格合并后模拟的边界。因此判断一列的结束需要一些技巧。</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h3>基于 MCP 的解决方案架构</h3>
+    <div style="text-align: center; margin-bottom: 30px;">
+        <h4 style="color: #87ceeb;">核心思路：构建一个自我优化的反馈循环系统</h4>
+    </div>
+    
+    <div style="text-align: left; background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; margin: 20px;">
+        <pre style="color: #87ceeb; font-size: 1.1em; line-height: 1.6;"><code>测试驱动的迭代优化流程：
+输入：算法原型 + 验证规则 + 测试文件集 + 预期结果
+│
+├─→ 执行检测算法 → 获得实际输出
+├─→ 对比预期结果 → 识别差异点
+├─→ 分析失败原因 → 生成改进建议
+└─→ 更新算法实现 → 重新测试验证</code></pre>
+    </div>
+</section>
+
+<section>
+    <h3>具体实施步骤</h3>
+    <div class="implementation-steps">
+        <div class="step-card">
+            <h4 style="color: #87ceeb;">1. 建立测试基础设施</h4>
+            <ul>
+                <li>构建包含多种典型场景的 Excel 文件测试集</li>
+                <li>定义每个文件的标准验证结果</li>
+                <li>创建可自动化执行的测试脚本</li>
+            </ul>
+        </div>
+        
+        <div class="step-card">
+            <h4 style="color: #98fb98;">2. 启动 AI 驱动的优化循环</h4>
+            <ul>
+                <li>使用 GitHub Copilot 执行：<code>&lt;检查算法, 规则描述, 测试文件&gt;</code> → 获得初始输出</li>
+                <li>根据 <code>&lt;算法描述, 预期结果, 实际差异&gt;</code> 生成算法改进方案</li>
+                <li>应用改进后的算法重新测试，持续迭代直至达标</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>优化过程中的关键发现</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px;">
+        <div>
+            <h4 style="color: #ff6b6b;">遇到的典型陷阱</h4>
+            <ul style="text-align: left;">
+                <li>❌ <strong>过度拟合</strong>：算法根据文件名特征进行判断，缺乏泛化能力</li>
+                <li>❌ <strong>关键词堆砌</strong>：使用大量硬编码关键词匹配，算法脆弱且不通用</li>
+                <li>❌ <strong>忽视边界情况</strong>：只针对理想格式优化，忽视现实中的格式变异</li>
+            </ul>
+        </div>
+        <div>
+            <h4 style="color: #98fb98;">获得的意外收获</h4>
+            <ul style="text-align: left;">
+                <li>✅ <strong>Excel 处理组件库</strong>：沉淀出高质量的 Excel 文件处理代码片段
+                    <ul style="font-size: 0.9em; margin-top: 10px;">
+                        <li>智能提取 sheet 名称和结构</li>
+                        <li>理解和处理合并单元格逻辑</li>
+                        <li>解析单元格颜色和样式信息</li>
+                    </ul>
+                </li>
+                <li>✅ <strong>领域知识积累</strong>：将 Excel 文件处理的经验知识结构化，为后续类似项目提供参考</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>成功的关键因素</h3>
+    <div class="success-factors">
+        <div class="factor-card">
+            <h4 style="color: #87ceeb;">领域知识注入</h4>
+            <p>将人类专家对 Excel 文件格式的理解整理成结构化知识，作为上下文提供给 AI，显著提升算法生成质量。</p>
+        </div>
+        
+        <div class="factor-card">
+            <h4 style="color: #98fb98;">渐进式优化</h4>
+            <p>从最简单的规则开始，逐步增加复杂性，确保每一步都有稳定的基础。</p>
+        </div>
+        
+        <div class="factor-card">
+            <h4 style="color: #ffd700;">自动化反馈</h4>
+            <p>建立完整的测试-反馈-优化闭环，让 AI 能够从错误中快速学习和改进。</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div style="text-align: center; margin-top: 60px;">
+        <p style="font-size: 1.5em; color: #ffd700;">💡</p>
+        <p style="margin-top: 20px; color: #87ceeb;">
+            <strong>参考资料</strong>：<br>
+            Google DeepMind《AlphaEvolve: A Gemini-powered coding agent for designing advanced algorithms》
+        </p>
+    </div>
+</section>
