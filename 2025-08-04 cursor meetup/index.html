@@ -13,9 +13,6 @@
     
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/custom.css">
-    
-    <!-- Draw.io Viewer Scripts (Online) -->
-    <script src="https://www.draw.io/js/viewer.min.js"></script>
 </head>
 <body>
         <div class="reveal">
@@ -87,6 +84,12 @@
             // Also initialize when navigating to slides with diagrams
             Reveal.addEventListener('slidechanged', function(event) {
                 initializeDrawioDiagramsInSlide(event.currentSlide);
+
+                // Render Flow Chart if the slide contains the chart container
+                const flowChartContainer = event.currentSlide.querySelector('#flow-chart');
+                if (flowChartContainer) {
+                    FlowChartApp.renderFlowChart(flowChartContainer);
+                }
             });
         });
 

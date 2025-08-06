@@ -231,14 +231,14 @@
 .step-number {
     background: linear-gradient(45deg, var(--maple-primary), var(--maple-accent-green));
     color: #ffffff;
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.4em;
     min-width: 40px;
 }
 
@@ -271,6 +271,17 @@
 .info-box h4 {
     margin-top: 0;
     color: var(--maple-heading);
+}
+
+/* Checklist style */
+.info-box .checklist {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.info-box .checklist li {
+    line-height: 1.8;
 }
 
 /* --- DRAW.IO --- */
