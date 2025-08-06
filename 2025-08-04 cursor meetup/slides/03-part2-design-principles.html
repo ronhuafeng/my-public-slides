@@ -35,27 +35,111 @@
 
 <section>
     <h3>典型应用场景</h3>
-    <div style="display: grid; grid-template-rows: repeat(3, 1fr); gap: 30px; margin-top: 30px;">
-        <div class="scenario-box">
+    <div style="display: flex; gap: 20px; margin-top: 30px;">
+        <div class="scenario-box" style="flex: 1; max-width: 33%;">
             <h4 style="color: #87ceeb;">开发环境管理工具</h4>
-            <pre style="text-align: left; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;"><code>功能：一键环境准备和验证
-输入：项目配置文件
-执行：依赖安装 → 服务启动 → 健康检查 → 测试运行
-输出：环境状态报告 + 问题修复建议</code></pre>
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <strong style="color: #87ceeb;">一键环境准备和验证</strong>
+                </div>
+                
+                <!-- 输入 -->
+                <div style="background: #4a90e2; color: white; padding: 8px; border-radius: 5px; text-align: center; margin-bottom: 10px; font-size: 0.9em;">
+                    📁 项目配置文件
+                </div>
+                
+                <!-- 流程箭头 -->
+                <div style="text-align: center; margin: 10px 0; font-size: 1.2em;">↓</div>
+                
+                <!-- 执行流程 -->
+                <div style="display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px;">
+                    <div style="background: #87ceeb; color: white; padding: 5px 8px; border-radius: 3px; font-size: 0.8em; text-align: center;">依赖安装</div>
+                    <div style="text-align: center; font-size: 0.8em;">↓</div>
+                    <div style="background: #87ceeb; color: white; padding: 5px 8px; border-radius: 3px; font-size: 0.8em; text-align: center;">服务启动</div>
+                    <div style="text-align: center; font-size: 0.8em;">↓</div>
+                    <div style="background: #87ceeb; color: white; padding: 5px 8px; border-radius: 3px; font-size: 0.8em; text-align: center;">健康检查</div>
+                    <div style="text-align: center; font-size: 0.8em;">↓</div>
+                    <div style="background: #87ceeb; color: white; padding: 5px 8px; border-radius: 3px; font-size: 0.8em; text-align: center;">测试运行</div>
+                </div>
+                
+                <!-- 输出箭头 -->
+                <div style="text-align: center; margin: 10px 0; font-size: 1.2em;">↓</div>
+                
+                <!-- 输出 -->
+                <div style="background: #28a745; color: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.9em;">
+                    📊 环境状态报告 + 🔧 问题修复建议
+                </div>
+            </div>
         </div>
-        <div class="scenario-box">
+        <div class="scenario-box" style="flex: 1; max-width: 33%;">
             <h4 style="color: #98fb98;">代码质量检查工具</h4>
-            <pre style="text-align: left; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;"><code>功能：全方位代码质量评估
-输入：代码仓库路径
-执行：静态分析 → 安全扫描 → 测试覆盖率 → 性能基准
-输出：质量评分 + 详细改进方案</code></pre>
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <strong style="color: #98fb98;">全方位代码质量评估</strong>
+                </div>
+                
+                <!-- 输入 -->
+                <div style="background: #28a745; color: white; padding: 8px; border-radius: 5px; text-align: center; margin-bottom: 10px; font-size: 0.9em;">
+                    📂 代码仓库路径
+                </div>
+                
+                <!-- 流程箭头 -->
+                <div style="text-align: center; margin: 10px 0; font-size: 1.2em;">↓</div>
+                
+                <!-- 执行流程 -->
+                <div style="display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px;">
+                    <div style="background: #98fb98; color: #333; padding: 5px 8px; border-radius: 3px; font-size: 0.8em; text-align: center;">静态分析</div>
+                    <div style="text-align: center; font-size: 0.8em;">↓</div>
+                    <div style="background: #98fb98; color: #333; padding: 5px 8px; border-radius: 3px; font-size: 0.8em; text-align: center;">安全扫描</div>
+                    <div style="text-align: center; font-size: 0.8em;">↓</div>
+                    <div style="background: #98fb98; color: #333; padding: 5px 8px; border-radius: 3px; font-size: 0.8em; text-align: center;">测试覆盖率</div>
+                    <div style="text-align: center; font-size: 0.8em;">↓</div>
+                    <div style="background: #98fb98; color: #333; padding: 5px 8px; border-radius: 3px; font-size: 0.8em; text-align: center;">性能基准</div>
+                </div>
+                
+                <!-- 输出箭头 -->
+                <div style="text-align: center; margin: 10px 0; font-size: 1.2em;">↓</div>
+                
+                <!-- 输出 -->
+                <div style="background: #dc3545; color: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.9em;">
+                    ⭐ 质量评分 + 📋 详细改进方案
+                </div>
+            </div>
         </div>
-        <div class="scenario-box">
+        <div class="scenario-box" style="flex: 1; max-width: 33%;">
             <h4 style="color: #ffd700;">部署流水线工具</h4>
-            <pre style="text-align: left; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;"><code>功能：自动化部署和回滚
-输入：部署配置 + 目标环境
-执行：构建镜像 → 部署服务 → 烟雾测试 → 流量切换
-输出：部署结果 + 监控链接</code></pre>
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <strong style="color: #ffd700;">自动化部署和回滚</strong>
+                </div>
+                
+                <!-- 输入 -->
+                <div style="background: #fd7e14; color: white; padding: 8px; border-radius: 5px; text-align: center; margin-bottom: 10px; font-size: 0.9em;">
+                    ⚙️ 部署配置 + 🎯 目标环境
+                </div>
+                
+                <!-- 流程箭头 -->
+                <div style="text-align: center; margin: 10px 0; font-size: 1.2em;">↓</div>
+                
+                <!-- 执行流程 -->
+                <div style="display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px;">
+                    <div style="background: #ffd700; color: #333; padding: 5px 8px; border-radius: 3px; font-size: 0.8em; text-align: center;">构建镜像</div>
+                    <div style="text-align: center; font-size: 0.8em;">↓</div>
+                    <div style="background: #ffd700; color: #333; padding: 5px 8px; border-radius: 3px; font-size: 0.8em; text-align: center;">部署服务</div>
+                    <div style="text-align: center; font-size: 0.8em;">↓</div>
+                    <div style="background: #ffd700; color: #333; padding: 5px 8px; border-radius: 3px; font-size: 0.8em; text-align: center;">烟雾测试</div>
+                    <div style="text-align: center; font-size: 0.8em;">↓</div>
+                    <div style="background: #ffd700; color: #333; padding: 5px 8px; border-radius: 3px; font-size: 0.8em; text-align: center;">流量切换</div>
+                </div>
+                
+                <!-- 输出箭头 -->
+                <div style="text-align: center; margin: 10px 0; font-size: 1.2em;">↓</div>
+                
+                <!-- 输出 -->
+                <div style="background: #6f42c1; color: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.9em;">
+                    ✅ 部署结果 + 📊 监控链接
+                </div>
+            </div>
         </div>
     </div>
 </section>

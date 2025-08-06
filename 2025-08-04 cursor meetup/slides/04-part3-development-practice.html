@@ -5,22 +5,59 @@
 
 <section>
     <h3>开发实践步骤</h3>
-    <div style="text-align: left; margin: 40px;">
-        <div class="step-box">
-            <h4 style="color: #87ceeb;">步骤：</h4>
-            <ol style="font-size: 1.1em; line-height: 1.6;">
-                <li><strong>识别重复性任务</strong>：统计团队在哪些环节花费时间最多</li>
-                <li><strong>分析现有工具缺陷</strong>：找出当前方案的具体问题点</li>
-                <li><strong>评估自动化价值</strong>：计算工具开发成本 vs 长期收益</li>
-            </ol>
-        </div>
-        
-        <div style="margin-top: 40px; padding: 30px; background: rgba(255,255,255,0.1); border-left: 5px solid #98fb98;">
-            <h4 style="color: #98fb98;">示例：部署流程优化</h4>
-            <ul>
-                <li><strong>痛点</strong>：每次部署需要10+个步骤，容易出错</li>
-                <li><strong>解决</strong>：封装为一键部署工具，错误率降低90%</li>
-            </ul>
+    <div style="margin: 30px auto; max-width: 1000px;">
+        <div class="flowchart-container" style="display: flex; justify-content: space-between; align-items: stretch; padding: 20px 0;">
+            <!-- Step 1 -->
+            <div class="flow-step" style="text-align: center; flex: 1; max-width: 250px; display: flex; flex-direction: column;">
+                <!-- 图标容器 -->
+                <div style="margin-bottom: 20px;">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 90px; height: 90px; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(0,0,0,0.2);">
+                        <span style="font-size: 2.2em; color: white;">🔍</span>
+                    </div>
+                </div>
+                <!-- 标题 -->
+                <h4 style="color: #1e293b; margin: 0 0 15px 0; font-size: 1.3em; font-weight: 700; text-align: center; min-height: 30px;">识别重复性任务</h4>
+                <!-- 描述 -->
+                <p style="font-size: 1.1em; color: #475569; margin: 0; line-height: 1.4; text-align: center;">统计团队花费<br>时间最多环节</p>
+            </div>
+            
+            <!-- Arrow 1 -->
+            <div style="display: flex; align-items: center; margin: 0 30px;">
+                <div style="color: #3b82f6; font-size: 2.5em; transform: translateY(-20px);">→</div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="flow-step" style="text-align: center; flex: 1; max-width: 250px; display: flex; flex-direction: column;">
+                <!-- 图标容器 -->
+                <div style="margin-bottom: 20px;">
+                    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); width: 90px; height: 90px; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(0,0,0,0.2);">
+                        <span style="font-size: 2.2em; color: white;">⚡</span>
+                    </div>
+                </div>
+                <!-- 标题 -->
+                <h4 style="color: #1e293b; margin: 0 0 15px 0; font-size: 1.3em; font-weight: 700; text-align: center; min-height: 30px;">分析现有缺陷</h4>
+                <!-- 描述 -->
+                <p style="font-size: 1.1em; color: #475569; margin: 0; line-height: 1.4; text-align: center;">找出当前方案<br>具体问题点</p>
+            </div>
+            
+            <!-- Arrow 2 -->
+            <div style="display: flex; align-items: center; margin: 0 30px;">
+                <div style="color: #3b82f6; font-size: 2.5em; transform: translateY(-20px);">→</div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="flow-step" style="text-align: center; flex: 1; max-width: 250px; display: flex; flex-direction: column;">
+                <!-- 图标容器 -->
+                <div style="margin-bottom: 20px;">
+                    <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); width: 90px; height: 90px; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(0,0,0,0.2);">
+                        <span style="font-size: 2.2em; color: white;">📊</span>
+                    </div>
+                </div>
+                <!-- 标题 -->
+                <h4 style="color: #1e293b; margin: 0 0 15px 0; font-size: 1.3em; font-weight: 700; text-align: center; min-height: 30px;">评估自动化价值</h4>
+                <!-- 描述 -->
+                <p style="font-size: 1.1em; color: #475569; margin: 0; line-height: 1.4; text-align: center;">计算成本<br>vs 长期收益</p>
+            </div>
         </div>
     </div>
 </section>
@@ -30,61 +67,154 @@
 </section>
 
 <section>
-    <h4 style="color: #87ceeb;">1. Command Line Tools MCP Server</h4>
-    <div style="text-align: left; margin: 20px;">
-        <div class="tool-info">
-            <p><strong>技术架构</strong>：基于 FastMCP 命令行工具包装器</p>
-            <p><strong>核心价值</strong>：通过JSON配置文件，将任何命令行工具动态封装为标准 MCP 工具</p>
+    <div style="text-align: center; margin-bottom: 25px;">
+        <h3 style="color: #1e293b; font-size: 2.1em; font-weight: 800; margin-bottom: 15px; text-shadow: 0 3px 6px rgba(0,0,0,0.15); letter-spacing: -0.02em;">
+            ⚙️ Command Line Tools MCP Server (Demo)
+        </h3>
+        <p style="color: #374151; font-size: 1.4em; font-weight: 600; background: rgba(135, 206, 235, 0.15); padding: 12px 24px; border-radius: 25px; display: inline-block; border: 1px solid rgba(135, 206, 235, 0.3);">基于 FastMCP 的命令行工具动态封装解决方案</p>
+    </div>
+    <div class="tool-showcase" style="margin: 15px auto; max-width: 900px; background: linear-gradient(135deg, rgba(135, 206, 235, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%); border-radius: 15px; padding: 25px; border: 1px solid rgba(135, 206, 235, 0.3);">
+        <!-- 核心价值突出显示 -->
+        <div style="background: rgba(255, 215, 0, 0.15); border-left: 4px solid #ffd700; padding: 20px; margin-bottom: 25px; border-radius: 8px; text-align: center;">
+            <p style="color: #1e293b; font-size: 1.3em; font-weight: 600;">🎯 通过JSON配置文件，将任何命令行工具动态封装为标准 MCP 工具</p>
         </div>
         
-        <div class="key-features">
-            <h5 style="color: #ffd700;">关键特性：</h5>
-            <ul>
-                <li><strong>配置驱动</strong>：无需修改代码，纯JSON定义工具</li>
-                <li><strong>多执行模式</strong>：oneshot(一次性)、foreground(前台)、background(后台)</li>
-                <li><strong>进程管理</strong>：内置后台进程监控和管理能力</li>
-                <li><strong>健壮性设计</strong>：支持工作目录、环境变量、超时控制</li>
-            </ul>
+        <!-- 关键特性网格 -->
+        <div class="features-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div class="feature-card" style="background: rgba(135, 206, 235, 0.15); padding: 15px; border-radius: 8px; border: 1px solid rgba(135, 206, 235, 0.2);">
+                <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 1.3em; margin-right: 8px;">📝</span>
+                    <strong style="color: #1e293b; font-size: 1.1em;">配置驱动</strong>
+                </div>
+                <p style="color: #374151; font-size: 0.95em;">无需修改代码，纯JSON定义</p>
+            </div>
+            
+            <div class="feature-card" style="background: rgba(135, 206, 235, 0.15); padding: 15px; border-radius: 8px; border: 1px solid rgba(135, 206, 235, 0.2);">
+                <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 1.3em; margin-right: 8px;">🔄</span>
+                    <strong style="color: #1e293b; font-size: 1.1em;">多执行模式</strong>
+                </div>
+                <p style="color: #374151; font-size: 0.95em;">oneshot、foreground、background</p>
+            </div>
+            
+            <div class="feature-card" style="background: rgba(135, 206, 235, 0.15); padding: 15px; border-radius: 8px; border: 1px solid rgba(135, 206, 235, 0.2);">
+                <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 1.3em; margin-right: 8px;">📊</span>
+                    <strong style="color: #1e293b; font-size: 1.1em;">进程管理</strong>
+                </div>
+                <p style="color: #374151; font-size: 0.95em;">后台进程监控和管理</p>
+            </div>
+            
+            <div class="feature-card" style="background: rgba(135, 206, 235, 0.15); padding: 15px; border-radius: 8px; border: 1px solid rgba(135, 206, 235, 0.2);">
+                <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 1.3em; margin-right: 8px;">🛡️</span>
+                    <strong style="color: #1e293b; font-size: 1.1em;">健壮性设计</strong>
+                </div>
+                <p style="color: #374151; font-size: 0.95em;">环境变量、超时控制</p>
+            </div>
         </div>
     </div>
 </section>
 
 <section>
-    <h4 style="color: #87ceeb;">2. MCP-SSE-Proxy</h4>
-    <div style="text-align: left; margin: 20px;">
-        <div class="tool-info">
-            <p><strong>技术架构</strong>：基于Next.js 14的全栈Web应用 + Docker容器化管理</p>
-            <p><strong>核心价值</strong>：MCP协议网关和管理仪表盘，解决不同传输协议间的通信障碍</p>
+    <div style="text-align: center; margin-bottom: 25px;">
+        <h3 style="color: #1e293b; font-size: 2.1em; font-weight: 800; margin-bottom: 15px; text-shadow: 0 3px 6px rgba(0,0,0,0.15); letter-spacing: -0.02em;">
+            🌉 MCP-SSE-Proxy (Demo)
+        </h3>
+        <p style="color: #374151; font-size: 1.4em; font-weight: 600; background: rgba(255, 105, 180, 0.15); padding: 12px 24px; border-radius: 25px; display: inline-block; border: 1px solid rgba(255, 105, 180, 0.3);">基于Next.js 14的全栈Web应用 + Docker容器化</p>
+    </div>
+    <div class="tool-showcase" style="margin: 15px auto; max-width: 900px; background: linear-gradient(135deg, rgba(255, 105, 180, 0.1) 0%, rgba(135, 206, 235, 0.1) 100%); border-radius: 15px; padding: 25px; border: 1px solid rgba(255, 105, 180, 0.3);">
+        <!-- 核心价值突出显示 -->
+        <div style="background: rgba(255, 215, 0, 0.15); border-left: 4px solid #ffd700; padding: 20px; margin-bottom: 25px; border-radius: 8px; text-align: center;">
+            <p style="color: #1e293b; font-size: 1.3em; font-weight: 600;">🎯 MCP协议网关和管理仪表盘，解决不同传输协议间的通信障碍</p>
         </div>
         
-        <div class="key-features">
-            <h5 style="color: #ffd700;">关键特性：</h5>
-            <ul>
-                <li><strong>协议桥接</strong>：将stdio、HTTP、SSE等协议统一为SSE流</li>
-                <li><strong>多服务器聚合</strong>：将多个MCP服务器工具集成到单一端点</li>
-                <li><strong>可视化管理</strong>：提供Web界面进行配置、监控、控制</li>
-                <li><strong>工具级权限控制</strong>：精细化管理每个工具的访问权限</li>
-                <li><strong>实时日志系统</strong>：通过SSE提供实时日志监控</li>
-            </ul>
+        <!-- 关键特性网格 -->
+        <div class="features-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+            <div class="feature-card" style="background: rgba(255, 105, 180, 0.15); padding: 12px; border-radius: 8px; border: 1px solid rgba(255, 105, 180, 0.2);">
+                <div style="display: flex; align-items: center; margin-bottom: 6px;">
+                    <span style="font-size: 1.2em; margin-right: 6px;">🔗</span>
+                    <strong style="color: #1e293b; font-size: 0.95em;">协议桥接</strong>
+                </div>
+                <p style="color: #374151; font-size: 0.85em;">统一为SSE流</p>
+            </div>
+            
+            <div class="feature-card" style="background: rgba(255, 105, 180, 0.15); padding: 12px; border-radius: 8px; border: 1px solid rgba(255, 105, 180, 0.2);">
+                <div style="display: flex; align-items: center; margin-bottom: 6px;">
+                    <span style="font-size: 1.2em; margin-right: 6px;">🔄</span>
+                    <strong style="color: #1e293b; font-size: 0.95em;">多服务器聚合</strong>
+                </div>
+                <p style="color: #374151; font-size: 0.85em;">集成到单一端点</p>
+            </div>
+            
+            <div class="feature-card" style="background: rgba(255, 105, 180, 0.15); padding: 12px; border-radius: 8px; border: 1px solid rgba(255, 105, 180, 0.2);">
+                <div style="display: flex; align-items: center; margin-bottom: 6px;">
+                    <span style="font-size: 1.2em; margin-right: 6px;">📊</span>
+                    <strong style="color: #1e293b; font-size: 0.95em;">可视化管理</strong>
+                </div>
+                <p style="color: #374151; font-size: 0.85em;">Web界面控制</p>
+            </div>
+            
+            <div class="feature-card" style="background: rgba(255, 105, 180, 0.15); padding: 12px; border-radius: 8px; border: 1px solid rgba(255, 105, 180, 0.2);">
+                <div style="display: flex; align-items: center; margin-bottom: 6px;">
+                    <span style="font-size: 1.2em; margin-right: 6px;">🔐</span>
+                    <strong style="color: #1e293b; font-size: 0.95em;">权限控制</strong>
+                </div>
+                <p style="color: #374151; font-size: 0.85em;">精细化管理</p>
+            </div>
+            
+            <div class="feature-card" style="background: rgba(255, 105, 180, 0.15); padding: 12px; border-radius: 8px; border: 1px solid rgba(255, 105, 180, 0.2); grid-column: span 2;">
+                <div style="display: flex; align-items: center; margin-bottom: 6px;">
+                    <span style="font-size: 1.2em; margin-right: 6px;">📝</span>
+                    <strong style="color: #1e293b; font-size: 0.95em;">实时日志系统</strong>
+                </div>
+                <p style="color: #374151; font-size: 0.85em;">通过SSE提供实时日志监控</p>
+            </div>
         </div>
     </div>
 </section>
 
 <section>
-    <h4 style="color: #87ceeb;">3. VSCode-Copy-for-LLM</h4>
-    <div style="text-align: left; margin: 20px;">
-        <div class="tool-info">
-            <p><strong>解决问题</strong>：优化代码上下文传递给大语言模型的格式和效率</p>
-        </div>
-        
-        <div class="key-features">
-            <h5 style="color: #ffd700;">核心功能：</h5>
-            <ul>
-                <li><strong>智能忽略</strong>：遵守.gitignore规则，支持嵌套规则正确解析</li>
-                <li><strong>可定制格式</strong>：自定义文件头、分隔符、输出格式</li>
-                <li><strong>大文件处理</strong>：文件大小限制、二进制文件自动检测</li>
-                <li><strong>用户体验</strong>：进度提示、清晰反馈、批量处理</li>
-            </ul>
+    <div style="text-align: center; margin-bottom: 25px;">
+        <h3 style="color: #1e293b; font-size: 2.1em; font-weight: 800; margin-bottom: 15px; text-shadow: 0 3px 6px rgba(0,0,0,0.15); letter-spacing: -0.02em;">
+            📋 VSCode-Copy-for-LLM
+        </h3>
+        <p style="color: #374151; font-size: 1.4em; font-weight: 600; background: rgba(64, 224, 255, 0.15); padding: 12px 24px; border-radius: 25px; display: inline-block; border: 1px solid rgba(64, 224, 255, 0.3);">优化代码上下文传递给大语言模型的格式和效率</p>
+    </div>
+    <div class="tool-showcase" style="margin: 15px auto; max-width: 900px; background: linear-gradient(135deg, rgba(64, 224, 255, 0.1) 0%, rgba(0, 255, 255, 0.1) 100%); border-radius: 15px; padding: 25px; border: 1px solid rgba(64, 224, 255, 0.3);">
+        <!-- 核心功能网格 -->
+        <div class="features-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div class="feature-card" style="background: rgba(64, 224, 255, 0.15); padding: 15px; border-radius: 8px; border: 1px solid rgba(64, 224, 255, 0.2);">
+                <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 1.3em; margin-right: 8px;">🚫</span>
+                    <strong style="color: #1e293b; font-size: 1.1em;">智能忽略</strong>
+                </div>
+                <p style="color: #374151; font-size: 0.95em;">遵守.gitignore规则，支持嵌套解析</p>
+            </div>
+            
+            <div class="feature-card" style="background: rgba(64, 224, 255, 0.15); padding: 15px; border-radius: 8px; border: 1px solid rgba(64, 224, 255, 0.2);">
+                <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 1.3em; margin-right: 8px;">🎨</span>
+                    <strong style="color: #1e293b; font-size: 1.1em;">可定制格式</strong>
+                </div>
+                <p style="color: #374151; font-size: 0.95em;">自定义文件头、分隔符、输出格式</p>
+            </div>
+            
+            <div class="feature-card" style="background: rgba(64, 224, 255, 0.15); padding: 15px; border-radius: 8px; border: 1px solid rgba(64, 224, 255, 0.2);">
+                <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 1.3em; margin-right: 8px;">📦</span>
+                    <strong style="color: #1e293b; font-size: 1.1em;">大文件处理</strong>
+                </div>
+                <p style="color: #374151; font-size: 0.95em;">文件大小限制、二进制文件检测</p>
+            </div>
+            
+            <div class="feature-card" style="background: rgba(64, 224, 255, 0.15); padding: 15px; border-radius: 8px; border: 1px solid rgba(64, 224, 255, 0.2);">
+                <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 1.3em; margin-right: 8px;">✨</span>
+                    <strong style="color: #1e293b; font-size: 1.1em;">用户体验</strong>
+                </div>
+                <p style="color: #374151; font-size: 0.95em;">进度提示、清晰反馈、批量处理</p>
+            </div>
         </div>
     </div>
 </section>
