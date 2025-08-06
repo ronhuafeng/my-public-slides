@@ -4,8 +4,6 @@
   "description": "Beautiful presentations with reveal.js",
   "main": "index.html",
   "scripts": {
-    "start": "browser-sync start --server --files \"**/*\" --port 8080",
-    "build": "rm -rf dist && mkdir -p dist && cp -r *.html css images slides dist/ && mkdir -p dist/node_modules && cp -r node_modules/* dist/node_modules/",
     "dev": "browser-sync start --server --files \"**/*\" --port 8080"
   },
   "dependencies": {
