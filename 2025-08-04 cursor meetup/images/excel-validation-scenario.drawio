@@ -1,0 +1,85 @@
+<mxfile host="65bd71144e">
+    <diagram name="Excel文件批量验证场景" id="excel-validation-scenario">
+        <mxGraphModel dx="1019" dy="532" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="main-task" value="&lt;b&gt;模块任务&lt;/b&gt;&lt;br&gt;&lt;br&gt;给定一组验证规则，使用 agentic workflow 去验证每个 Excel 文件是否满足这些规则，并给判断的依据" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#e3f2fd;strokeColor=#1976d2;strokeWidth=3;fontColor=#2c3e50;align=left;verticalAlign=top;spacingLeft=20;spacingTop=15;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="80" width="460" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="rules-section" value="📋 规则举例" style="rounded=1;whiteSpace=wrap;html=1;fontSize=18;fontStyle=1;fillColor=#fff3e0;strokeColor=#f57c00;strokeWidth=2;fontColor=#2c3e50;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="250" width="300" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="rule1" value="标题为&quot;数量&quot;的列不为空" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffffff;strokeColor=#ff9800;strokeWidth=1;fontColor=#2c3e50;align=left;verticalAlign=middle;spacingLeft=15;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="310" width="300" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="rule2" value="✓ 表格中&quot;完成&quot;需要打勾 ☑" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffffff;strokeColor=#ff9800;strokeWidth=1;fontColor=#2c3e50;align=left;verticalAlign=middle;spacingLeft=15;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="370" width="300" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="tech-section" value="🔧 技术手段" style="rounded=1;whiteSpace=wrap;html=1;fontSize=18;fontStyle=1;fillColor=#e8f5e8;strokeColor=#4caf50;strokeWidth=2;fontColor=#2c3e50;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="250" width="360" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="tech1" value="⚙️ 正则匹配&quot;完成&quot;，然后在前后匹配 ☑ 或类似字符" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffffff;strokeColor=#4caf50;strokeWidth=1;fontColor=#2c3e50;align=left;verticalAlign=top;spacingLeft=15;spacingTop=10;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="320" width="360" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="tech2" value="🤖 将 Excel 转成文本，加上提示词，让大模型去判断" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffffff;strokeColor=#4caf50;strokeWidth=1;fontColor=#2c3e50;align=left;verticalAlign=top;spacingLeft=15;spacingTop=10;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="378.5" width="360" height="51.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow1" value="" style="endArrow=classic;html=1;rounded=1;strokeColor=#ff9800;strokeWidth=2;curved=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;" parent="1" source="main-task" target="rules-section" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="550" y="300" as="sourcePoint"/>
+                        <mxPoint x="600" y="250" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="240" y="140"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="arrow2" value="" style="endArrow=classic;html=1;rounded=1;strokeColor=#4caf50;strokeWidth=2;curved=0;entryX=0.7;entryY=0;entryDx=0;entryDy=0;" parent="1" source="main-task" target="tech-section" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="620" y="300" as="sourcePoint"/>
+                        <mxPoint x="670" y="250" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="930" y="140"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="workflow-title" value="📊 Agentic Workflow 流程" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#2c3e50;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="450" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="step1" value="📁 输入&lt;br/&gt;Excel 文件" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffebee;strokeColor=#f44336;strokeWidth=2;fontColor=#2c3e50;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="500" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="step2" value="📋 应用&lt;br/&gt;验证规则" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff3e0;strokeColor=#ff9800;strokeWidth=2;fontColor=#2c3e50;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="410" y="500" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="step3" value="🤖 AI 分析&lt;br/&gt;判断" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e8f5e8;strokeColor=#4caf50;strokeWidth=2;fontColor=#2c3e50;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="660" y="500" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="step4" value="📝 输出&lt;br/&gt;验证结果" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1f5fe;strokeColor=#03a9f4;strokeWidth=2;fontColor=#2c3e50;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="940" y="500" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="flow1" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#666666;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="step1" target="step2" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="320" y="580" as="sourcePoint"/>
+                        <mxPoint x="370" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="flow2" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#666666;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="step2" target="step3" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="520" y="580" as="sourcePoint"/>
+                        <mxPoint x="570" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="flow3" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#666666;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="step3" target="step4" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="720" y="580" as="sourcePoint"/>
+                        <mxPoint x="770" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="description" value="💡 通过结构化规则和AI智能判断，实现Excel文件的自动化批量验证" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#f5f5f5;strokeColor=#cccccc;strokeWidth=1;fontColor=#2c3e50;align=center;fontStyle=2;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="620" width="560" height="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

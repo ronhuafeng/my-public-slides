@@ -5,64 +5,23 @@
 </section>
 
 <section>
-    <h3>场景背景：Excel 文件批量验证</h3>
-    <div class="info-box blue">
-        <p><strong>模块任务</strong>：给定一组验证规则，使用一个 agentic workflow 去验证每个 Excel 文件是否满足这些规则，并给判断的依据。</p>
-    </div>
-    <div class="grid-2-col">
-        <div class="info-box yellow">
-            <h4>规则举例：</h4>
-            <ul>
-                <li>标注为"数量"的列不为空</li>
-                <li>表格中 "完成"需要 打勾 ☑</li>
-            </ul>
-        </div>
-        <div class="info-box green">
-            <h4>技术手段</h4>
-            <ul>
-                <li>正则匹配 完成，然后在前后匹配 ☑ 或者类似的字符</li>
-                <li>将 Excel 转成文本，加上提示词，让大模型去判断</li>
-            </ul>
-        </div>
-    </div>
+    <h3>场景背景：Excel 文件批量验证场景</h3>
+    <img src="../images/excel-validation-scenario.svg" alt="Excel 文件批量验证场景" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(71, 85, 105, 0.1); background-color: #fcfdf4; padding: 15px;">
 </section>
 
 <section>
-    <h3>现实的问题</h3>
-    <div class="card">
-        <ul>
-            <li><strong>Excel 文件排版不一致</strong>：导致定位特定的列的算法并不稳定</li>
-            <li><strong>复杂的 sheet 结构</strong>：文件中一个 sheet 可能有多个"区域"，即一个 sheet 其实放下了多个 sheet 的内容，区域划分是通过带有颜色的单元格合并后模拟的边界。因此判断一列的结束需要一些技巧。</li>
-        </ul>
-    </div>
+    <h3>Excel 文件处理的现实挑战</h3>
+    <img src="../images/excel-real-problems.svg" alt="Excel 文件处理的现实挑战" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(71, 85, 105, 0.1); background-color: #fcfdf4; padding: 15px;">
 </section>
 
 <section>
-    <h3>基于 MCP 的解决方案架构</h3>
-    <h4>核心思路：构建一个自我优化的反馈循环系统</h4>
+    <h3>核心思路：构建一个自我优化的反馈循环系统</h3>
     <img src="../images/algorithm-optimization-workflow.svg" alt="算法优化工作流程图" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(71, 85, 105, 0.1); background-color: #fcfdf4; padding: 15px;">
 </section>
 
 <section>
-    <h3>具体实施步骤</h3>
-    <div class="grid-2-col">
-        <div class="card card-accent-border blue">
-            <h4>1. 建立测试基础设施</h4>
-            <ul>
-                <li>构建包含多种典型场景的 Excel 文件测试集</li>
-                <li>定义每个文件的标准验证结果</li>
-                <li>创建可自动化执行的测试脚本</li>
-            </ul>
-        </div>
-        <div class="card card-accent-border green">
-            <h4>2. 启动 AI 驱动的优化循环</h4>
-            <ul>
-                <li>使用 GitHub Copilot 执行：<code><检查算法, 规则描述, 测试文件></code> → 获得初始输出</li>
-                <li>根据 <code><算法描述, 预期结果, 实际差异></code> 生成算法改进方案</li>
-                <li>应用改进后的算法重新测试，持续迭代直至达标</li>
-            </ul>
-        </div>
-    </div>
+    <h3>LLM 驱动的算法优化实施步骤</h3>
+    <img src="../images/implementation-steps.svg" alt="LLM 驱动的算法优化实施步骤" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(71, 85, 105, 0.1); background-color: #fcfdf4; padding: 15px;">
 </section>
 
 <section>
