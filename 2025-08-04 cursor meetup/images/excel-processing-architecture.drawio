@@ -1,0 +1,121 @@
+<mxfile host="65bd71144e">
+    <diagram name="Excel处理组件库架构" id="excel-processing-architecture">
+        <mxGraphModel dx="2533" dy="682" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="file-loader" value="文件加载 Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="80" y="60" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="formats" value=".xls / .xlsx / .csv&#xa;openpyxl, xlrd, pandas" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="60" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="sheet-manager" value="工作表管理 Module" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="80" y="180" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="sheet-features" value="• 智能提取sheet名称&#xa;• 缓存元数据信息&#xa;• 识别隐藏/保护工作表" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;align=left" parent="1" vertex="1">
+                    <mxGeometry x="480" y="60" width="180" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="search-module" value="查找定位 Module" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="220" y="300" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="search-features" value="• 精确匹配&#xa;• 部分匹配&#xa;• 正则表达式匹配&#xa;• 快速索引优化" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;align=left" parent="1" vertex="1">
+                    <mxGeometry x="780" y="170" width="180" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="content-reader" value="内容读取 Module" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="80" y="420" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="content-features" value="• 整表读取&#xa;• 行/列切片&#xa;• 区域抽取 (B2:D10)&#xa;• 单元格精确读取" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;align=left" parent="1" vertex="1">
+                    <mxGeometry x="80" y="530" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="context-module" value="周边上下文 Module" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="540" y="300" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="context-features" value="• 按半径提取邻居单元格&#xa;• 处理合并单元格&#xa;• 自动填充空白逻辑" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16;align=left" parent="1" vertex="1">
+                    <mxGeometry x="780" y="290" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="formatter" value="格式化输出 Module" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="540" y="420" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="format-features" value="• LLM-friendly JSON格式&#xa;• Schema校验&#xa;• 数据完整性保证" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=16;align=left" parent="1" vertex="1">
+                    <mxGeometry x="780" y="410" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="llm-layer" value="LLM 交互 Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#ff9933;fontSize=14;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="540" y="550" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="llm-features" value="• 结构化Excel数据传输&#xa;• 刚性规则遵循&#xa;• 避免上下文混淆" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#ff9933;fontSize=16;align=left" parent="1" vertex="1">
+                    <mxGeometry x="780" y="540" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="challenges-title" value="技术挑战与解决方案" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#666666;fontSize=16;fontStyle=1;textDirection=vertical-lr;" parent="1" vertex="1">
+                    <mxGeometry y="60" width="50" height="550" as="geometry"/>
+                </mxCell>
+                <mxCell id="merge-cells" value="合并单元格逻辑&#xa;• 维护合并区列表&#xa;• 自动展开映射&#xa;• 左上角值统一" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=16;align=left" parent="1" vertex="1">
+                    <mxGeometry x="-190" y="60" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="style-parsing" value="样式解析&#xa;• 单元格背景色&#xa;• 字体颜色&#xa;• 统一样式字典" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;align=left" parent="1" vertex="1">
+                    <mxGeometry x="-190" y="210" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="performance" value="性能优化&#xa;• 延迟加载&#xa;• 快速索引&#xa;• 元信息缓存" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16;align=left" parent="1" vertex="1">
+                    <mxGeometry x="-190" y="360" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="data-flow" value="数据流转&#xa;• 结构化转换&#xa;• 格式标准化&#xa;• LLM适配" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;align=left" parent="1" vertex="1">
+                    <mxGeometry x="-190" y="530" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge1" parent="1" source="file-loader" target="sheet-manager" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge2" style="exitX=1;exitY=0.75;exitDx=0;exitDy=0;" parent="1" source="sheet-manager" target="search-module" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="320" y="225"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge3" style="exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="sheet-manager" target="content-reader" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge4" parent="1" source="search-module" target="context-module" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge5" parent="1" source="content-reader" target="formatter" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge6" parent="1" source="context-module" target="formatter" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge7" parent="1" source="formatter" target="llm-layer" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge8" style="dashed=1;strokeColor=#999999" parent="1" source="file-loader" target="formats" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge9" style="dashed=1;strokeColor=#999999;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="sheet-manager" target="sheet-features" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="570" y="210"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge10" style="dashed=1;strokeColor=#999999;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="search-module" target="search-features" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="370" y="245"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge11" style="dashed=1;strokeColor=#999999" parent="1" source="content-reader" target="content-features" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge12" style="dashed=1;strokeColor=#999999" parent="1" source="context-module" target="context-features" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge13" style="dashed=1;strokeColor=#999999" parent="1" source="formatter" target="format-features" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge14" style="dashed=1;strokeColor=#999999" parent="1" source="llm-layer" target="llm-features" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
