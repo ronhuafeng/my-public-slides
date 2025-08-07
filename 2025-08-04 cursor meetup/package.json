@@ -5,12 +5,15 @@
   "main": "index.html",
   "scripts": {
     "dev": "browser-sync start --server --files \"**/*\" --port 8080",
-    "build": "echo \"Nothing to build – this is a pure static reveal.js site\""
+    "build": "node build.js",
+    "serve:dist": "browser-sync start --server dist --files \"dist/**/*\" --port 8081"
   },
   "dependencies": {
+    "reveal.js": "^5.2.1"
   },
   "devDependencies": {
-    "browser-sync": "^3.0.4"
+    "browser-sync": "^3.0.4",
+    "fs-extra": "^11.1.1"
   },
   "keywords": [
     "presentation",

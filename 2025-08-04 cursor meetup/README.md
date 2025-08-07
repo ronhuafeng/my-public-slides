@@ -1,5 +1,46 @@
 # Beautiful Slides with Reveal.js
 
+基于 reveal.js 的精美演示文稿，支持在线和离线模式。
+
+## 快速开始
+
+### 开发模式（在线）
+使用 CDN 资源进行开发，需要网络连接：
+
+```bash
+npm install
+npm run dev
+```
+
+访问 http://localhost:8080 查看演示文稿
+
+### 构建离线版本
+生成包含所有必需文件的离线版本：
+
+```bash
+npm run build
+```
+
+这将创建一个 `dist/` 目录，包含所有必需的文件，可以在没有网络的情况下使用。
+
+### 预览离线版本
+```bash
+npm run serve:dist
+```
+
+访问 http://localhost:8081 查看离线版本
+
+## 部署
+
+### Cloudflare Pages / Netlify
+- **在线版本**：直接部署源代码，使用 CDN 资源
+- **离线版本**：先运行 `npm run build`，然后部署 `dist/` 目录
+
+### 本地分享
+运行 `npm run build` 后，可以将 `dist/` 目录整个复制到任何地方，直接用浏览器打开 `index.html` 即可。
+
+---
+
 A modern presentation framework powered by reveal.js for creating beautiful, interactive slide presentations.
 
 ## Features
